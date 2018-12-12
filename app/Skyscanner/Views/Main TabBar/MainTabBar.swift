@@ -12,9 +12,9 @@ class MainTabBar: UITabBarController {
     
     private var tabBarConfigured: Bool = false
     
-    private let searchViewController: BaseViewController = BaseViewController()
+    private let searchViewController: SearchViewController = SearchRouter.setupModule()
     private let exploreViewController: ExploreViewController = ExploreRouter.setupModule()
-    private let profileViewController: BaseViewController = BaseViewController()
+    private let profileViewController: ProfileViewController = ProfileRouter.setupModule()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

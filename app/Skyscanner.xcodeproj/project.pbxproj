@@ -32,6 +32,11 @@
 		C862582E21C189E90091DD3A /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C862582D21C189E90091DD3A /* ExploreViewController.swift */; };
 		C862583021C18A570091DD3A /* ExploreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C862582F21C18A570091DD3A /* ExploreRouter.swift */; };
 		C862583421C18ADA0091DD3A /* CustomTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C862583321C18ADA0091DD3A /* CustomTitleView.swift */; };
+		C862583721C1912A0091DD3A /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C862583621C1912A0091DD3A /* UIView.swift */; };
+		C862583B21C194D50091DD3A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C862583A21C194D50091DD3A /* SearchViewController.swift */; };
+		C862583D21C195070091DD3A /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C862583C21C195070091DD3A /* SearchRouter.swift */; };
+		C862583F21C195800091DD3A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C862583E21C195800091DD3A /* ProfileViewController.swift */; };
+		C862584121C195BA0091DD3A /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C862584021C195BA0091DD3A /* ProfileRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +79,11 @@
 		C862582D21C189E90091DD3A /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		C862582F21C18A570091DD3A /* ExploreRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreRouter.swift; sourceTree = "<group>"; };
 		C862583321C18ADA0091DD3A /* CustomTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitleView.swift; sourceTree = "<group>"; };
+		C862583621C1912A0091DD3A /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		C862583A21C194D50091DD3A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C862583C21C195070091DD3A /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		C862583E21C195800091DD3A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C862584021C195BA0091DD3A /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +226,7 @@
 		C862581A21C16F560091DD3A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C862583521C1911C0091DD3A /* UIView */,
 				C862581B21C16F6B0091DD3A /* Date */,
 			);
 			path = Extensions;
@@ -259,7 +270,9 @@
 				C862582621C185650091DD3A /* Base */,
 				C862583121C18AB90091DD3A /* Common */,
 				C862582921C185AD0091DD3A /* Main TabBar */,
+				C862583821C194B20091DD3A /* Search */,
 				C862582C21C189B10091DD3A /* Explore */,
+				C862583921C194BF0091DD3A /* Profile */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -303,6 +316,32 @@
 				C862583321C18ADA0091DD3A /* CustomTitleView.swift */,
 			);
 			path = "Custom Title View";
+			sourceTree = "<group>";
+		};
+		C862583521C1911C0091DD3A /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				C862583621C1912A0091DD3A /* UIView.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		C862583821C194B20091DD3A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				C862583A21C194D50091DD3A /* SearchViewController.swift */,
+				C862583C21C195070091DD3A /* SearchRouter.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		C862583921C194BF0091DD3A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C862583E21C195800091DD3A /* ProfileViewController.swift */,
+				C862584021C195BA0091DD3A /* ProfileRouter.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,15 +451,20 @@
 				C862580221C10DED0091DD3A /* HTTPCode.swift in Sources */,
 				C862580821C10DED0091DD3A /* EndPoint.swift in Sources */,
 				C862581D21C16F750091DD3A /* Date.swift in Sources */,
+				C862583F21C195800091DD3A /* ProfileViewController.swift in Sources */,
 				C862580121C10DED0091DD3A /* RequestManager.swift in Sources */,
 				C862583021C18A570091DD3A /* ExploreRouter.swift in Sources */,
 				C862581621C156B50091DD3A /* PollRequest.swift in Sources */,
 				C862580721C10DED0091DD3A /* RequestErrors.swift in Sources */,
+				C862583721C1912A0091DD3A /* UIView.swift in Sources */,
 				C862582821C1857C0091DD3A /* BaseViewController.swift in Sources */,
+				C862583B21C194D50091DD3A /* SearchViewController.swift in Sources */,
+				C862583D21C195070091DD3A /* SearchRouter.swift in Sources */,
 				C862580D21C11F100091DD3A /* CreateSessionParameterData.swift in Sources */,
 				C862581121C120D80091DD3A /* SessionRequest.swift in Sources */,
 				C862580321C10DED0091DD3A /* NetworkHeaders.swift in Sources */,
 				C862580621C10DED0091DD3A /* ResultError.swift in Sources */,
+				C862584121C195BA0091DD3A /* ProfileRouter.swift in Sources */,
 				C862580F21C1202D0091DD3A /* CreateSessionResponse.swift in Sources */,
 				C862582E21C189E90091DD3A /* ExploreViewController.swift in Sources */,
 				C86257D321C10D010091DD3A /* AppDelegate.swift in Sources */,

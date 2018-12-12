@@ -22,6 +22,7 @@ extension ExploreViewController {
     
     private func setupViews() {
         view.backgroundColor = .white
+        showTitle = true
         
         configureNavigationBar()
         
