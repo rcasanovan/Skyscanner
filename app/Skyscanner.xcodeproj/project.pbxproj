@@ -29,6 +29,9 @@
 		C862582421C178BB0091DD3A /* SimulatedResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = C862582321C178BB0091DD3A /* SimulatedResponse.json */; };
 		C862582821C1857C0091DD3A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C862582721C1857C0091DD3A /* BaseViewController.swift */; };
 		C862582B21C185CE0091DD3A /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C862582A21C185CE0091DD3A /* MainTabBar.swift */; };
+		C862582E21C189E90091DD3A /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C862582D21C189E90091DD3A /* ExploreViewController.swift */; };
+		C862583021C18A570091DD3A /* ExploreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C862582F21C18A570091DD3A /* ExploreRouter.swift */; };
+		C862583421C18ADA0091DD3A /* CustomTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C862583321C18ADA0091DD3A /* CustomTitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,9 @@
 		C862582321C178BB0091DD3A /* SimulatedResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SimulatedResponse.json; sourceTree = "<group>"; };
 		C862582721C1857C0091DD3A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C862582A21C185CE0091DD3A /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		C862582D21C189E90091DD3A /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		C862582F21C18A570091DD3A /* ExploreRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreRouter.swift; sourceTree = "<group>"; };
+		C862583321C18ADA0091DD3A /* CustomTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,7 +257,9 @@
 			isa = PBXGroup;
 			children = (
 				C862582621C185650091DD3A /* Base */,
+				C862583121C18AB90091DD3A /* Common */,
 				C862582921C185AD0091DD3A /* Main TabBar */,
+				C862582C21C189B10091DD3A /* Explore */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -270,6 +278,31 @@
 				C862582A21C185CE0091DD3A /* MainTabBar.swift */,
 			);
 			path = "Main TabBar";
+			sourceTree = "<group>";
+		};
+		C862582C21C189B10091DD3A /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				C862582D21C189E90091DD3A /* ExploreViewController.swift */,
+				C862582F21C18A570091DD3A /* ExploreRouter.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		C862583121C18AB90091DD3A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C862583221C18AC70091DD3A /* Custom Title View */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C862583221C18AC70091DD3A /* Custom Title View */ = {
+			isa = PBXGroup;
+			children = (
+				C862583321C18ADA0091DD3A /* CustomTitleView.swift */,
+			);
+			path = "Custom Title View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,12 +406,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C862583421C18ADA0091DD3A /* CustomTitleView.swift in Sources */,
 				C862582B21C185CE0091DD3A /* MainTabBar.swift in Sources */,
 				C862580421C10DED0091DD3A /* Result.swift in Sources */,
 				C862580221C10DED0091DD3A /* HTTPCode.swift in Sources */,
 				C862580821C10DED0091DD3A /* EndPoint.swift in Sources */,
 				C862581D21C16F750091DD3A /* Date.swift in Sources */,
 				C862580121C10DED0091DD3A /* RequestManager.swift in Sources */,
+				C862583021C18A570091DD3A /* ExploreRouter.swift in Sources */,
 				C862581621C156B50091DD3A /* PollRequest.swift in Sources */,
 				C862580721C10DED0091DD3A /* RequestErrors.swift in Sources */,
 				C862582821C1857C0091DD3A /* BaseViewController.swift in Sources */,
@@ -387,6 +422,7 @@
 				C862580321C10DED0091DD3A /* NetworkHeaders.swift in Sources */,
 				C862580621C10DED0091DD3A /* ResultError.swift in Sources */,
 				C862580F21C1202D0091DD3A /* CreateSessionResponse.swift in Sources */,
+				C862582E21C189E90091DD3A /* ExploreViewController.swift in Sources */,
 				C86257D321C10D010091DD3A /* AppDelegate.swift in Sources */,
 				C862580521C10DED0091DD3A /* RequestProtocol.swift in Sources */,
 				C862581921C157420091DD3A /* PollResponse.swift in Sources */,
