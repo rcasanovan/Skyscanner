@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        configureNavigationBar()
+        showInitialView()
         return true
     }
 
@@ -33,5 +35,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
     }
 
+}
+
+//MARK: - Navigation methods
+extension AppDelegate  {
+    
+    private func showInitialView() {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let mainTabBar = MainTabBar()
+        
+        self.window?.rootViewController = mainTabBar
+        self.window?.makeKeyAndVisible()
+    }
+    
+    private func configureNavigationBar() {
+        UINavigationBar.appearance().barStyle = .default
+        UINavigationBar.appearance().barTintColor = .white
+    }
+    
 }
 
