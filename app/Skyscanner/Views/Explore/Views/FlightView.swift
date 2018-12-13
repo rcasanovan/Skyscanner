@@ -37,6 +37,13 @@ class FlightView: UIView {
         durationLabel.text = viewModel.duration
     }
     
+    public func clear() {
+        timeLabel.text = ""
+        informationLabel.text = ""
+        connectionLabel.text = ""
+        durationLabel.text = ""
+    }
+    
 }
 
 // MARK: - Setup views

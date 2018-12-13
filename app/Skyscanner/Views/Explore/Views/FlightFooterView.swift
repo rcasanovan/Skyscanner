@@ -36,6 +36,13 @@ class FlightFooterView: UIView {
         informationLabel.text = viewModel.information
     }
     
+    public func clear() {
+        priceLabel.text = ""
+        bookingLabel.text = ""
+        ratingLabel.text = ""
+        informationLabel.text = ""
+    }
+    
 }
 
 // MARK: - Setup views

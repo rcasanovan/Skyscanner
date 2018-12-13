@@ -30,6 +30,9 @@ class FlightTableViewCell: UITableViewCell {
     
     public override func prepareForReuse() {
         super.prepareForReuse()
+        outboundFlightView.clear()
+        inboundFlightView.clear()
+        flightFooterView.clear()
     }
     
     public func bindWithViewModel(_ viewModel: FlightViewModel) {
