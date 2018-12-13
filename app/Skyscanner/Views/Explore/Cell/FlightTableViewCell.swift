@@ -12,6 +12,7 @@ class FlightTableViewCell: UITableViewCell {
     
     private let outboundFlightView: FlightView = FlightView()
     private let inboundFlightView: FlightView = FlightView()
+    private let flightFooterView: FlightFooterView = FlightFooterView()
     
     static public var identifier: String {
         return String(describing: self)
@@ -78,11 +79,13 @@ extension FlightTableViewCell {
     private func addSubviews() {
         addSubview(outboundFlightView)
         addSubview(inboundFlightView)
+        addSubview(flightFooterView)
         
         addConstraintsWithFormat("H:|[v0]|", views: outboundFlightView)
         addConstraintsWithFormat("H:|[v0]|", views: inboundFlightView)
+        addConstraintsWithFormat("H:|[v0]|", views: flightFooterView)
         
-        addConstraintsWithFormat("V:|[v0(\(outboundFlightView.height))][v1(\(inboundFlightView.height))]-\(Layout.bottom)-|", views: outboundFlightView, inboundFlightView)
+        addConstraintsWithFormat("V:|[v0(\(outboundFlightView.height))][v1(\(inboundFlightView.height))][v2(\(flightFooterView.height))]-\(Layout.bottom)-|", views: outboundFlightView, inboundFlightView, flightFooterView)
     }
     
 }
