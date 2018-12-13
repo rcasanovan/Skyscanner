@@ -55,9 +55,10 @@ extension FlightViewModel {
     
     public static func getTestViewModel() -> [FlightViewModel] {
         var flights: [FlightViewModel] = [FlightViewModel]()
+        let airlineUrl = URL(string: "https://logos.skyscnr.com/images/airlines/favicon/EZ.png")
         
-        let outboundInformation =  FlightInformationViewModel(airlineUrl: nil, time: "15:35 - 17:00", information: "BUD-LGW, Wizz Air", connection: "Direct", duration: "2h 35m")
-        let inboundInformation =  FlightInformationViewModel(airlineUrl: nil, time: "15:35 - 17:00", information: "BUD-LGW, Wizz Air", connection: "Direct", duration: "2h 35m")
+        let outboundInformation =  FlightInformationViewModel(airlineUrl: airlineUrl, time: "15:35 - 17:00", information: "BUD-LGW, Wizz Air", connection: "Direct", duration: "2h 35m")
+        let inboundInformation =  FlightInformationViewModel(airlineUrl: airlineUrl, time: "15:35 - 17:00", information: "BUD-LGW, Wizz Air", connection: "Direct", duration: "2h 35m")
         
         let flightViewModel = FlightViewModel(outboundInformation: outboundInformation, inboundInformation: inboundInformation, price: "80€", bookingInformation: "2 bookings required", rating: "10.0", information: "Cheapest Shortest")
         

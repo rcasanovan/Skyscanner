@@ -31,6 +31,9 @@ class FlightView: UIView {
     }
     
     public func bindWithViewModel(_ viewModel: FlightInformationViewModel) {
+        if let airlineUrl = viewModel.airlineUrl {
+            airlineImageView.hnk_setImage(from: airlineUrl)
+        }
         timeLabel.text = viewModel.time
         informationLabel.text = viewModel.information
         connectionLabel.text = viewModel.connection
@@ -57,7 +60,9 @@ extension FlightView {
     }
     
     private func configureSubviews() {
-        airlineImageView.backgroundColor = .yellow
+        airlineImageView.backgroundColor = .clear
+        airlineImageView.contentMode = .scaleAspectFit
+        airlineImageView.frame = CGRect(x: 0.0, y: 0.0, width: Layout.AirlineImageView.width, height: Layout.AirlineImageView.height)
         
         timeLabel.font = UIFont.boldSystemFont(ofSize: 18.0)
         timeLabel.textColor = .black

@@ -10,9 +10,9 @@
 #define Skyscanner_Bridging_Header_h
 
 //__ Haneke
-#import "Haneke.h"
+#import <Haneke/Haneke.h>
 
 //__ SVProgressHUD
-#import "SVProgressHUD.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 #endif /* Skyscanner_Bridging_Header_h */
