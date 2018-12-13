@@ -73,12 +73,12 @@ extension ExploreInteractor: ExploreInteractorDelegate {
     
     func getFlights(completion: @escaping ExploreGetFlightsCompletionBlock) {
         guard let pollEndPoint = pollEndPoint else {
-            completion(nil, false, nil)
+            completion(nil, false, nil, allFlightsSync)
             return
         }
         
         if allFlightsSync {
-            completion(self.flightsViewModel, true, nil)
+            completion(self.flightsViewModel, true, nil, allFlightsSync)
             return
         }
         
@@ -87,7 +87,7 @@ extension ExploreInteractor: ExploreInteractorDelegate {
             switch response {
             case .success(let pollResponse):
                 guard let pollResponse = pollResponse else {
-                    completion(nil, false, nil)
+                    completion(nil, false, nil, self.allFlightsSync)
                     return
                 }
                 self.pageIndex = self.pageIndex + 1
@@ -96,9 +96,9 @@ extension ExploreInteractor: ExploreInteractorDelegate {
                     self.allFlightsSync = true
                 }
                 self.flightsViewModel.append(contentsOf: responseViewModel)
-                completion(self.flightsViewModel, true, nil)
+                completion(self.flightsViewModel, true, nil, self.allFlightsSync)
             case .failure(let error):
-                completion(nil, false, error)
+                completion(nil, false, error, self.allFlightsSync)
             }
         }
     }

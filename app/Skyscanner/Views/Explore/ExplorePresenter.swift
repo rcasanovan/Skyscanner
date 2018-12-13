@@ -62,12 +62,12 @@ extension ExplorePresenter {
         if showProgress {
             view?.showProgress(true, status: "Getting flights")
         }
-        interactor.getFlights { [weak self] (flights, success, error) in
+        interactor.getFlights { [weak self] (flights, success, error, allFlightsSync) in
             guard let `self` = self else { return }
             
             self.view?.showProgress(false)
             
-            if let flights = flights {
+            if let flights = flights, allFlightsSync == false {
                 self.view?.loadFlights(flights)
                 return
             }

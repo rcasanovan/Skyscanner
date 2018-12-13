@@ -22,7 +22,7 @@ protocol ExplorePresenterDelegate : class {
 }
 
 // Presenter / Interactor
-typealias ExploreGetFlightsCompletionBlock = (_ viewModel: [FlightViewModel]?, _ success: Bool, _ error: ResultError?) -> Void
+typealias ExploreGetFlightsCompletionBlock = (_ viewModel: [FlightViewModel]?, _ success: Bool, _ error: ResultError?, _ allFlightsSync: Bool) -> Void
 typealias ExploreCreateSessionCompletionBlock = (_ success: Bool, _ error: ResultError?) -> Void
 
 protocol ExploreInteractorDelegate : class {
