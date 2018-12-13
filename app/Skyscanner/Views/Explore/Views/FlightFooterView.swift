@@ -84,7 +84,7 @@ extension FlightFooterView {
             static let trailing: CGFloat = 10.0
             static let top: CGFloat = 25.0
             static let height: CGFloat = 26.0
-            static let width: CGFloat = 60.0
+            static let width: CGFloat = 120.0
         }
         
         struct BookingLabel {

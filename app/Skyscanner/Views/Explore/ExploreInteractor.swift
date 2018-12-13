@@ -38,7 +38,6 @@ extension ExploreInteractor {
         
         sessionRequest.completion = completion
         sessionRequest.encodableBody = body
-        sessionRequest.verbose = true
         requestManager.send(request: sessionRequest)
     }
     
@@ -77,12 +76,16 @@ extension ExploreInteractor: ExploreInteractorDelegate {
             return
         }
         
-        getFlightsWith(pollEndpoint: pollEndPoint, pageIndex: pageIndex, pageSize: pageSize) { [weak self] (response) in
+        getFlightsWith(pollEndpoint: pollEndPoint, pageIndex: pageIndex, pageSize: pageSize, simulatedJSONFile: "SimulatedResponse") { [weak self] (response) in
             guard let `self` = self else { return }
             switch response {
             case .success(let pollResponse):
+                guard let pollResponse = pollResponse else {
+                    completion(nil, false, nil)
+                    return
+                }
                 self.pageIndex = self.pageIndex + 1
-                completion(FlightViewModel.getTestViewModel(), true, nil)
+                completion(FlightViewModel.getViewModelWith(pollResponse: pollResponse), true, nil)
             case .failure(let error):
                 completion(nil, false, error)
             }

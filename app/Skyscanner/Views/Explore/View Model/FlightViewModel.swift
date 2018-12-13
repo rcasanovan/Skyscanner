@@ -42,13 +42,23 @@ struct FlightViewModel {
     }
     
     public static func getViewModelWith(pollResponse: PollResponse) -> [FlightViewModel] {
-        //__ TO DO
-        return [FlightViewModel]()
+        var flights: [FlightViewModel] = [FlightViewModel]()
+        
+        for eachItinerary in pollResponse.Itineraries {
+            let airlineUrl = URL(string: "https://logos.skyscnr.com/images/airlines/favicon/EZ.png")
+            let outboundInformation =  FlightInformationViewModel(airlineUrl: airlineUrl, time: "15:35 - 17:00", information: "BUD-LGW, Wizz Air", connection: "Direct", duration: "2h 35m")
+            let inboundInformation =  FlightInformationViewModel(airlineUrl: airlineUrl, time: "15:35 - 17:00", information: "BUD-LGW, Wizz Air", connection: "Direct", duration: "2h 35m")
+            
+            for eachPrice in eachItinerary.PricingOptions {
+                let price = "\(eachPrice.Price)€"
+                let flightViewModel = FlightViewModel(outboundInformation: outboundInformation, inboundInformation: inboundInformation, price: price, bookingInformation: "2 bookings required", rating: "10.0", information: "Cheapest Shortest")
+                flights.append(flightViewModel)
+            }
+        }
+        
+        return flights
     }
-    
-//    public static func getTestViewModel() -> HDSettingsViewModel {
-//        return HDSettingsViewModel(imageUrl: "https://s3.amazonaws.com/hood-images/2222thumbnail", username: "Ricardo", age: 37)
-//    }
+
 }
 
 extension FlightViewModel {
