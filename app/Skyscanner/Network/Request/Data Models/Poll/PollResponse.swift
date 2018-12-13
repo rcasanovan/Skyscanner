@@ -11,7 +11,7 @@ import Foundation
 public struct PollResponse: Decodable {
     
     let SessionKey: String
-    let Itineraries: [ItinerarieResponse]
+    let Itineraries: [ItineraryResponse]
     let Legs: [LegResponse]
     let Segments: [SegmentResponse]
     let Carriers: [CarrierResponse]
@@ -21,7 +21,7 @@ public struct PollResponse: Decodable {
     
 }
 
-public struct ItinerarieResponse: Decodable {
+public struct ItineraryResponse: Decodable {
     
     let OutboundLegId: String
     let InboundLegId: String

@@ -69,7 +69,7 @@ struct FlightViewModel {
 
 extension FlightViewModel {
     
-    private static func outboundInformationWith(_ itinerary: ItinerarieResponse, allLegs: [LegResponse], allCarriers: [CarrierResponse], allPlaces: [PlaceResponse]) -> FlightInformationViewModel? {
+    private static func outboundInformationWith(_ itinerary: ItineraryResponse, allLegs: [LegResponse], allCarriers: [CarrierResponse], allPlaces: [PlaceResponse]) -> FlightInformationViewModel? {
         let leg = allLegs.filter {$0.Id == itinerary.OutboundLegId}.first
         
         guard let currentLeg = leg, let currentCarrierId = currentLeg.Carriers.first else {
@@ -106,7 +106,7 @@ extension FlightViewModel {
         return FlightInformationViewModel(airlineUrl: airlineUrl, time: time, information: information, connection: connection, duration: duration)
     }
     
-    private static func inboundInformationWith(_ itinerary: ItinerarieResponse, allLegs: [LegResponse], allCarriers: [CarrierResponse], allPlaces: [PlaceResponse]) -> FlightInformationViewModel? {
+    private static func inboundInformationWith(_ itinerary: ItineraryResponse, allLegs: [LegResponse], allCarriers: [CarrierResponse], allPlaces: [PlaceResponse]) -> FlightInformationViewModel? {
         let leg = allLegs.filter {$0.Id == itinerary.InboundLegId}.first
         
         guard let currentLeg = leg, let currentCarrierId = currentLeg.Carriers.first else {
