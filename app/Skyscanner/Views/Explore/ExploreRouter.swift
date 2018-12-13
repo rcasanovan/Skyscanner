@@ -12,6 +12,7 @@ class ExploreRouter {
     
     public static func setupModule(navigationController: UINavigationController? = nil) -> ExploreViewController {
         let exploreVC = ExploreViewController()
+        exploreVC.presenter = ExplorePresenter(view: exploreVC, navigationController: navigationController)
         return exploreVC
     }
     

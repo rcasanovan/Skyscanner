@@ -10,6 +10,8 @@ import UIKit
 
 class ExploreViewController: BaseViewController {
     
+    public var presenter: ExplorePresenterDelegate?
+    
     private let flightsContainerView: UIView = UIView()
     private var flightsTableView: UITableView?
     private var dataSource: FlightsDatasource?
@@ -88,6 +90,15 @@ extension ExploreViewController {
             flightsContainerView.addConstraintsWithFormat("H:|[v0]|", views: flightsTableView)
             flightsContainerView.addConstraintsWithFormat("V:|[v0]|", views: flightsTableView)
         }
+    }
+    
+}
+
+extension ExploreViewController: ExploreViewInjection {
+    
+    func loadFlights(_ viewModels: [FlightViewModel]) {
+        dataSource?.flights = viewModels
+        flightsTableView?.reloadData()
     }
     
 }
