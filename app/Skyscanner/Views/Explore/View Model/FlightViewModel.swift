@@ -46,10 +46,11 @@ struct FlightViewModel {
         
         let allLegs = pollResponse.Legs
         let allCarriers = pollResponse.Carriers
+        let allPlaces = pollResponse.Places
         
         for eachItinerary in pollResponse.Itineraries {
             
-            if let outboundInformation = outboundInformationWith(eachItinerary, allLegs: allLegs, allCarriers: allCarriers), let inboundInformation = inboundInformationWith(eachItinerary, allLegs: allLegs, allCarriers: allCarriers) {
+            if let outboundInformation = outboundInformationWith(eachItinerary, allLegs: allLegs, allCarriers: allCarriers, allPlaces: allPlaces), let inboundInformation = inboundInformationWith(eachItinerary, allLegs: allLegs, allCarriers: allCarriers, allPlaces: allPlaces) {
                 for eachPrice in eachItinerary.PricingOptions {
                     let price = "\(eachPrice.Price) €"
                     let flightViewModel = FlightViewModel(outboundInformation: outboundInformation, inboundInformation: inboundInformation, price: price, bookingInformation: "2 bookings required", rating: "10.0", information: "Cheapest Shortest")
@@ -65,7 +66,7 @@ struct FlightViewModel {
 
 extension FlightViewModel {
     
-    private static func outboundInformationWith(_ itinerary: ItinerarieResponse, allLegs: [LegResponse], allCarriers: [CarrierResponse]) -> FlightInformationViewModel? {
+    private static func outboundInformationWith(_ itinerary: ItinerarieResponse, allLegs: [LegResponse], allCarriers: [CarrierResponse], allPlaces: [PlaceResponse]) -> FlightInformationViewModel? {
         let leg = allLegs.filter {$0.Id == itinerary.OutboundLegId}.first
         
         guard let currentLeg = leg, let currentCarrierId = currentLeg.Carriers.first else {
@@ -81,12 +82,18 @@ extension FlightViewModel {
             return nil
         }
         
+        let originStation = allPlaces.filter {$0.Id == currentLeg.OriginStation}.first
+        let destinationStation = allPlaces.filter {$0.Id == currentLeg.DestinationStation}.first
+        guard let currentOriginStation = originStation, let currentDestinationStation = destinationStation else {
+            return nil
+        }
+        
         let airlineUrl = URL(string: "https://logos.skyscnr.com/images/airlines/favicon/\(currentCarrier.Code).png")
         
         let totalStops = currentLeg.Stops.count
         let connection = totalStops > 0 ? "\(totalStops) scale" : "Direct"
         
-        let information = "BUD-LGW, \(currentCarrier.Name)"
+        let information = "\(currentOriginStation.Code)-\(currentDestinationStation.Code), \(currentCarrier.Name)"
         
         let time = "\(departureHHmmTime) - \(arrivalHHmmTime)"
         
@@ -96,7 +103,7 @@ extension FlightViewModel {
         return FlightInformationViewModel(airlineUrl: airlineUrl, time: time, information: information, connection: connection, duration: duration)
     }
     
-    private static func inboundInformationWith(_ itinerary: ItinerarieResponse, allLegs: [LegResponse], allCarriers: [CarrierResponse]) -> FlightInformationViewModel? {
+    private static func inboundInformationWith(_ itinerary: ItinerarieResponse, allLegs: [LegResponse], allCarriers: [CarrierResponse], allPlaces: [PlaceResponse]) -> FlightInformationViewModel? {
         let leg = allLegs.filter {$0.Id == itinerary.InboundLegId}.first
         
         guard let currentLeg = leg, let currentCarrierId = currentLeg.Carriers.first else {
@@ -112,12 +119,18 @@ extension FlightViewModel {
             return nil
         }
         
+        let originStation = allPlaces.filter {$0.Id == currentLeg.OriginStation}.first
+        let destinationStation = allPlaces.filter {$0.Id == currentLeg.DestinationStation}.first
+        guard let currentOriginStation = originStation, let currentDestinationStation = destinationStation else {
+            return nil
+        }
+        
         let airlineUrl = URL(string: "https://logos.skyscnr.com/images/airlines/favicon/\(currentCarrier.Code).png")
         
         let totalStops = currentLeg.Stops.count
         let connection = totalStops > 0 ? "\(totalStops) scale" : "Direct"
         
-        let information = "BUD-LGW, \(currentCarrier.Name)"
+        let information = "\(currentOriginStation.Code)-\(currentDestinationStation.Code), \(currentCarrier.Name)"
         
         let time = "\(departureHHmmTime) - \(arrivalHHmmTime)"
         
