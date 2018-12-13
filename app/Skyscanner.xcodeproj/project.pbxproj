@@ -74,6 +74,7 @@
 		C83003AE21C27B4000CCCAC8 /* ExplorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorePresenter.swift; sourceTree = "<group>"; };
 		C83003B021C27C4100CCCAC8 /* ExploreInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreInteractor.swift; sourceTree = "<group>"; };
 		C83003B221C288BD00CCCAC8 /* FlightFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightFooterView.swift; sourceTree = "<group>"; };
+		C846805321C2958D0003E2E1 /* Skyscanner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Skyscanner-Bridging-Header.h"; sourceTree = "<group>"; };
 		C86257CF21C10D010091DD3A /* Skyscanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skyscanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86257D221C10D010091DD3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C86257D921C10D020091DD3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -198,6 +199,7 @@
 		C86257D121C10D010091DD3A /* Skyscanner */ = {
 			isa = PBXGroup;
 			children = (
+				C846805321C2958D0003E2E1 /* Skyscanner-Bridging-Header.h */,
 				C86257D221C10D010091DD3A /* AppDelegate.swift */,
 				C862582521C185570091DD3A /* Views */,
 				C862581A21C16F560091DD3A /* Extensions */,
@@ -822,6 +824,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = co.pijp.Skyscanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Skyscanner/Skyscanner-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -842,6 +845,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = co.pijp.Skyscanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Skyscanner/Skyscanner-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
