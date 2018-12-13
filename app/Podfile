@@ -1,0 +1,23 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '11.0'
+use_frameworks!
+inhibit_all_warnings!
+
+#link_with 'Skyscanner', 'SkyscannerTests'
+
+def skyscannerPods
+    #SVProgressHUD
+    pod 'SVProgressHUD', '~> 2.2.5'
+    
+    #Images
+    pod 'Haneke', '~> 1.0'
+end
+
+target 'Skyscanner' do
+    skyscannerPods
+end
+
+target 'SkyscannerTests' do
+    skyscannerPods
+end

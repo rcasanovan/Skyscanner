@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DFB37B1AF22EC71B455B46C /* Pods_Skyscanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 127DCB928441706B8F2FCAB0 /* Pods_Skyscanner.framework */; };
+		C51A4C211463C93D96953A07 /* Pods_SkyscannerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 619072B0BBE32252DED5FA7D /* Pods_SkyscannerTests.framework */; };
 		C83003A321C26F7200CCCAC8 /* FlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83003A221C26F7200CCCAC8 /* FlightView.swift */; };
 		C83003A621C2726100CCCAC8 /* FlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83003A521C2726100CCCAC8 /* FlightTableViewCell.swift */; };
 		C83003A821C273A700CCCAC8 /* FlightsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83003A721C273A700CCCAC8 /* FlightsDataSource.swift */; };
@@ -58,6 +60,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		127DCB928441706B8F2FCAB0 /* Pods_Skyscanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Skyscanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		619072B0BBE32252DED5FA7D /* Pods_SkyscannerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyscannerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EDE2223E67CCC9145BC0587 /* Pods-SkyscannerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyscannerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkyscannerTests/Pods-SkyscannerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		926FDAF2BACEC6A676ACD8E1 /* Pods-Skyscanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Skyscanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Skyscanner/Pods-Skyscanner.release.xcconfig"; sourceTree = "<group>"; };
+		A8279EA4403D8B11AE2D9158 /* Pods-Skyscanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Skyscanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Skyscanner/Pods-Skyscanner.debug.xcconfig"; sourceTree = "<group>"; };
+		BEDF61491D8857E2DE907B74 /* Pods-SkyscannerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyscannerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyscannerTests/Pods-SkyscannerTests.release.xcconfig"; sourceTree = "<group>"; };
 		C83003A221C26F7200CCCAC8 /* FlightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightView.swift; sourceTree = "<group>"; };
 		C83003A521C2726100CCCAC8 /* FlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTableViewCell.swift; sourceTree = "<group>"; };
 		C83003A721C273A700CCCAC8 /* FlightsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsDataSource.swift; sourceTree = "<group>"; };
@@ -107,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DFB37B1AF22EC71B455B46C /* Pods_Skyscanner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,12 +123,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C51A4C211463C93D96953A07 /* Pods_SkyscannerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2CD13D2F71A6CB4620FFCB56 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				127DCB928441706B8F2FCAB0 /* Pods_Skyscanner.framework */,
+				619072B0BBE32252DED5FA7D /* Pods_SkyscannerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ADE946E8F2763027EEF8D471 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A8279EA4403D8B11AE2D9158 /* Pods-Skyscanner.debug.xcconfig */,
+				926FDAF2BACEC6A676ACD8E1 /* Pods-Skyscanner.release.xcconfig */,
+				6EDE2223E67CCC9145BC0587 /* Pods-SkyscannerTests.debug.xcconfig */,
+				BEDF61491D8857E2DE907B74 /* Pods-SkyscannerTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C83003A121C26F5A00CCCAC8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +181,8 @@
 				C86257D121C10D010091DD3A /* Skyscanner */,
 				C86257E621C10D020091DD3A /* SkyscannerTests */,
 				C86257D021C10D010091DD3A /* Products */,
+				ADE946E8F2763027EEF8D471 /* Pods */,
+				2CD13D2F71A6CB4620FFCB56 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -399,9 +431,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C86257EC21C10D020091DD3A /* Build configuration list for PBXNativeTarget "Skyscanner" */;
 			buildPhases = (
+				DA124C5B2064E9477D3A244B /* [CP] Check Pods Manifest.lock */,
 				C86257CB21C10D010091DD3A /* Sources */,
 				C86257CC21C10D010091DD3A /* Frameworks */,
 				C86257CD21C10D010091DD3A /* Resources */,
+				FD17A6674FCF452D708893BE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -416,9 +450,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C86257EF21C10D020091DD3A /* Build configuration list for PBXNativeTarget "SkyscannerTests" */;
 			buildPhases = (
+				FD97C26C7762C46CA9DBDA60 /* [CP] Check Pods Manifest.lock */,
 				C86257DF21C10D020091DD3A /* Sources */,
 				C86257E021C10D020091DD3A /* Frameworks */,
 				C86257E121C10D020091DD3A /* Resources */,
+				3688BBDDF005ADD76D93E421 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -487,6 +523,101 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3688BBDDF005ADD76D93E421 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SkyscannerTests/Pods-SkyscannerTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Haneke/Haneke.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Haneke.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SkyscannerTests/Pods-SkyscannerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA124C5B2064E9477D3A244B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Skyscanner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD17A6674FCF452D708893BE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Skyscanner/Pods-Skyscanner-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Haneke/Haneke.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Haneke.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Skyscanner/Pods-Skyscanner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD97C26C7762C46CA9DBDA60 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SkyscannerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C86257CB21C10D010091DD3A /* Sources */ = {
@@ -678,11 +809,13 @@
 		};
 		C86257ED21C10D020091DD3A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8279EA4403D8B11AE2D9158 /* Pods-Skyscanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5753N2Y6RP;
 				INFOPLIST_FILE = Skyscanner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -696,11 +829,13 @@
 		};
 		C86257EE21C10D020091DD3A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 926FDAF2BACEC6A676ACD8E1 /* Pods-Skyscanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5753N2Y6RP;
 				INFOPLIST_FILE = Skyscanner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -714,6 +849,7 @@
 		};
 		C86257F021C10D020091DD3A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EDE2223E67CCC9145BC0587 /* Pods-SkyscannerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -735,6 +871,7 @@
 		};
 		C86257F121C10D020091DD3A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEDF61491D8857E2DE907B74 /* Pods-SkyscannerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
