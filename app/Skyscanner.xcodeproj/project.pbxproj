@@ -11,6 +11,7 @@
 		C83003A621C2726100CCCAC8 /* FlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83003A521C2726100CCCAC8 /* FlightTableViewCell.swift */; };
 		C83003A821C273A700CCCAC8 /* FlightsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83003A721C273A700CCCAC8 /* FlightsDataSource.swift */; };
 		C83003AB21C2740F00CCCAC8 /* FlightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83003AA21C2740F00CCCAC8 /* FlightViewModel.swift */; };
+		C83003AD21C27AD700CCCAC8 /* ExploreProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83003AC21C27AD700CCCAC8 /* ExploreProtocols.swift */; };
 		C86257D321C10D010091DD3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86257D221C10D010091DD3A /* AppDelegate.swift */; };
 		C86257DA21C10D020091DD3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C86257D921C10D020091DD3A /* Assets.xcassets */; };
 		C86257DD21C10D020091DD3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86257DB21C10D020091DD3A /* LaunchScreen.storyboard */; };
@@ -58,6 +59,7 @@
 		C83003A521C2726100CCCAC8 /* FlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTableViewCell.swift; sourceTree = "<group>"; };
 		C83003A721C273A700CCCAC8 /* FlightsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsDataSource.swift; sourceTree = "<group>"; };
 		C83003AA21C2740F00CCCAC8 /* FlightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightViewModel.swift; sourceTree = "<group>"; };
+		C83003AC21C27AD700CCCAC8 /* ExploreProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreProtocols.swift; sourceTree = "<group>"; };
 		C86257CF21C10D010091DD3A /* Skyscanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skyscanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86257D221C10D010091DD3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C86257D921C10D020091DD3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 				C83003A121C26F5A00CCCAC8 /* Views */,
 				C83003A421C2724600CCCAC8 /* Cell */,
 				C83003A921C273EA00CCCAC8 /* View Model */,
+				C83003AC21C27AD700CCCAC8 /* ExploreProtocols.swift */,
 				C862582D21C189E90091DD3A /* ExploreViewController.swift */,
 				C83003A721C273A700CCCAC8 /* FlightsDataSource.swift */,
 				C862582F21C18A570091DD3A /* ExploreRouter.swift */,
@@ -498,6 +501,7 @@
 				C83003A321C26F7200CCCAC8 /* FlightView.swift in Sources */,
 				C83003A621C2726100CCCAC8 /* FlightTableViewCell.swift in Sources */,
 				C862582821C1857C0091DD3A /* BaseViewController.swift in Sources */,
+				C83003AD21C27AD700CCCAC8 /* ExploreProtocols.swift in Sources */,
 				C862583B21C194D50091DD3A /* SearchViewController.swift in Sources */,
 				C862583D21C195070091DD3A /* SearchRouter.swift in Sources */,
 				C862580D21C11F100091DD3A /* CreateSessionParameterData.swift in Sources */,
