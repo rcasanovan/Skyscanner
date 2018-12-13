@@ -51,7 +51,7 @@ struct FlightViewModel {
             
             if let outboundInformation = outboundInformationWith(eachItinerary, allLegs: allLegs, allCarriers: allCarriers), let inboundInformation = inboundInformationWith(eachItinerary, allLegs: allLegs, allCarriers: allCarriers) {
                 for eachPrice in eachItinerary.PricingOptions {
-                    let price = "\(eachPrice.Price)€"
+                    let price = "\(eachPrice.Price) €"
                     let flightViewModel = FlightViewModel(outboundInformation: outboundInformation, inboundInformation: inboundInformation, price: price, bookingInformation: "2 bookings required", rating: "10.0", information: "Cheapest Shortest")
                     flights.append(flightViewModel)
                 }
@@ -82,7 +82,9 @@ extension FlightViewModel {
         let totalStops = currentLeg.Stops.count
         let connection = totalStops > 0 ? "\(totalStops) scale" : "Direct"
         
-        return FlightInformationViewModel(airlineUrl: airlineUrl, time: "15:35 - 17:00", information: "BUD-LGW, Wizz Air", connection: connection, duration: "2h 35m")
+        let information = "BUD-LGW, \(currentCarrier.Name)"
+        
+        return FlightInformationViewModel(airlineUrl: airlineUrl, time: "15:35 - 17:00", information: information, connection: connection, duration: "2h 35m")
     }
     
     private static func inboundInformationWith(_ itinerary: ItinerarieResponse, allLegs: [LegResponse], allCarriers: [CarrierResponse]) -> FlightInformationViewModel? {
@@ -102,7 +104,9 @@ extension FlightViewModel {
         let totalStops = currentLeg.Stops.count
         let connection = totalStops > 0 ? "\(totalStops) scale" : "Direct"
         
-        return FlightInformationViewModel(airlineUrl: airlineUrl, time: "15:35 - 17:00", information: "BUD-LGW, Wizz Air", connection: connection, duration: "2h 35m")
+        let information = "BUD-LGW, \(currentCarrier.Name)"
+        
+        return FlightInformationViewModel(airlineUrl: airlineUrl, time: "15:35 - 17:00", information: information, connection: connection, duration: "2h 35m")
     }
     
 }
