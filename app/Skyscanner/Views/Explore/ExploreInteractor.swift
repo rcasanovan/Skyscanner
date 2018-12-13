@@ -14,10 +14,13 @@ class ExploreInteractor {
     private var pollEndPoint: String?
     private var pageIndex: UInt
     private var pageSize: UInt
+    private var allFlightsSync: Bool = false
+    private var flightsViewModel: [FlightViewModel]
     
     init() {
         pageIndex = 0
-        pageSize = 20
+        pageSize = 1500
+        flightsViewModel = []
     }
     
 }
@@ -69,10 +72,13 @@ extension ExploreInteractor: ExploreInteractorDelegate {
     }
     
     func getFlights(completion: @escaping ExploreGetFlightsCompletionBlock) {
-//        completion(FlightViewModel.getTestViewModel(), true, nil)
-        
         guard let pollEndPoint = pollEndPoint else {
             completion(nil, false, nil)
+            return
+        }
+        
+        if allFlightsSync {
+            completion(self.flightsViewModel, true, nil)
             return
         }
         
@@ -85,7 +91,12 @@ extension ExploreInteractor: ExploreInteractorDelegate {
                     return
                 }
                 self.pageIndex = self.pageIndex + 1
-                completion(FlightViewModel.getViewModelWith(pollResponse: pollResponse), true, nil)
+                let responseViewModel = FlightViewModel.getViewModelWith(pollResponse: pollResponse)
+                if responseViewModel.count == 0 {
+                    self.allFlightsSync = true
+                }
+                self.flightsViewModel.append(contentsOf: responseViewModel)
+                completion(self.flightsViewModel, true, nil)
             case .failure(let error):
                 completion(nil, false, error)
             }

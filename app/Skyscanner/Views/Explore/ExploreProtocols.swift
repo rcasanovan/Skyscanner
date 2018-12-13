@@ -18,6 +18,7 @@ protocol ExploreViewInjection : class {
 
 protocol ExplorePresenterDelegate : class {
     func viewDidLoad()
+    func loadNextPage()
 }
 
 // Presenter / Interactor

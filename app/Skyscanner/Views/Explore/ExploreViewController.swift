@@ -15,6 +15,8 @@ class ExploreViewController: BaseViewController {
     private let flightsContainerView: UIView = UIView()
     private var flightsTableView: UITableView?
     private var dataSource: FlightsDatasource?
+    private var totalFlights: Int = 0
+    private var isLoadingNextPage: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +48,7 @@ extension ExploreViewController {
         flightsTableView?.invalidateIntrinsicContentSize()
         flightsTableView?.backgroundColor = .lightGray
         flightsTableView?.showsVerticalScrollIndicator = false
+        flightsTableView?.delegate = self
         
         registerCells()
         setupDataSource()
@@ -82,6 +85,14 @@ extension ExploreViewController {
 // MARK: - Layout & constraints
 extension ExploreViewController {
     
+    private struct Layout {
+        
+        struct Scroll {
+            static let percentagePosition: Double = 75.0
+        }
+        
+    }
+    
     private func addSubviews() {
         view.addSubview(flightsContainerView)
         
@@ -92,6 +103,25 @@ extension ExploreViewController {
             flightsContainerView.addSubview(flightsTableView)
             flightsContainerView.addConstraintsWithFormat("H:|[v0]|", views: flightsTableView)
             flightsContainerView.addConstraintsWithFormat("V:|[v0]|", views: flightsTableView)
+        }
+    }
+    
+}
+
+// MARK: - UITableViewDelegate
+extension ExploreViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // Get the position for a percentage of the scrolling
+        // In this case we got the positions for the 75%
+        let position = Int(((Layout.Scroll.percentagePosition * Double(totalFlights - 1)) / 100.0))
+        
+        // if we're not loading a next page && we´re in the 75% position
+        if !self.isLoadingNextPage && indexPath.item == position {
+            // Change the value -> We're loading the next page
+            self.isLoadingNextPage = true
+            // Call the presenter
+            presenter?.loadNextPage()
         }
     }
     
@@ -108,6 +138,8 @@ extension ExploreViewController: ExploreViewInjection {
     }
     
     func loadFlights(_ viewModels: [FlightViewModel]) {
+        isLoadingNextPage = false
+        totalFlights = viewModels.count
         dataSource?.flights = viewModels
         flightsTableView?.reloadData()
     }

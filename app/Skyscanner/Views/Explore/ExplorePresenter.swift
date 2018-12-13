@@ -15,6 +15,7 @@ class ExplorePresenter {
     
     private weak var view: ExploreViewInjection?
     private let interactor: ExploreInteractorDelegate
+    private var showProgress: Bool = false
     
     // MARK - Lifecycle
     init(view: ExploreViewInjection, navigationController: UINavigationController? = nil) {
@@ -58,7 +59,9 @@ extension ExplorePresenter {
     }
     
     private func getFlights() {
-        view?.showProgress(true, status: "Getting flights")
+        if showProgress {
+            view?.showProgress(true, status: "Getting flights")
+        }
         interactor.getFlights { [weak self] (flights, success, error) in
             guard let `self` = self else { return }
             
@@ -87,7 +90,13 @@ extension ExplorePresenter {
 extension ExplorePresenter: ExplorePresenterDelegate {
     
     func viewDidLoad() {
+        showProgress = true
         getFlightsInformation()
+    }
+    
+    func loadNextPage() {
+        showProgress = false
+        getFlights()
     }
     
 }
