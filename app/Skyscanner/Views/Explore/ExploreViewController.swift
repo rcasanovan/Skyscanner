@@ -71,7 +71,9 @@ extension ExploreViewController {
     private func configureNavigationBar() {
         let customTitleView = CustomTitleView()
         customTitleView.titleColor = .black
+        customTitleView.subtitleColor = .lightGray
         customTitleView.setTitle("Edinburgh to London")
+        customTitleView.setSubtitle("Mar 01., Wed - Mar 05., Sun")
         navigationItem.titleView = customTitleView
     }
     

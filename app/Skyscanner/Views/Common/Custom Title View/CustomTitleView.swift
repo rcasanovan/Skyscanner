@@ -12,6 +12,7 @@ class CustomTitleView: UIView {
     
     private var contentStackView = UIStackView()
     private var titleLabel = UILabel()
+    private var subtitleLabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,6 +36,16 @@ class CustomTitleView: UIView {
         }
     }
     
+    public func setSubtitle(_ title: String) {
+        subtitleLabel.text = title
+    }
+    
+    public var subtitleColor: UIColor? {
+        didSet {
+            subtitleLabel.textColor = subtitleColor
+        }
+    }
+    
     private func viewConfig() {
         contentStackView.axis = .vertical
         contentStackView.alignment = .center
@@ -42,12 +53,16 @@ class CustomTitleView: UIView {
         contentStackView.spacing = 5
         
         backgroundColor = .clear
-        titleLabel.font = UIFont.systemFont(ofSize: 18.0)
+        titleLabel.font = UIFont.systemFont(ofSize: 15.0)
         titleLabel.textColor = .white
+        
+        subtitleLabel.font = UIFont.systemFont(ofSize: 13.0)
+        subtitleLabel.textColor = .white
     }
     
     private func addViewsConfig() {
         contentStackView.addArrangedSubview(titleLabel)
+        contentStackView.addArrangedSubview(subtitleLabel)
         addSubview(contentStackView)
     }
     

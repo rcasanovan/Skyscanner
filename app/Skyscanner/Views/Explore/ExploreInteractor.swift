@@ -17,7 +17,7 @@ class ExploreInteractor {
     
     init() {
         pageIndex = 0
-        pageSize = 10
+        pageSize = 20
     }
     
 }
