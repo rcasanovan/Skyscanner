@@ -97,6 +97,10 @@ extension ExploreViewController {
 
 extension ExploreViewController: ExploreViewInjection {
     
+    func showProgress(_ show: Bool, status: String) {
+        showLoader(show, status: status)
+    }
+    
     func showProgress(_ show: Bool) {
         showLoader(show)
     }

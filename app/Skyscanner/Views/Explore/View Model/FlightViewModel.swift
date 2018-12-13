@@ -44,21 +44,67 @@ struct FlightViewModel {
     public static func getViewModelWith(pollResponse: PollResponse) -> [FlightViewModel] {
         var flights: [FlightViewModel] = [FlightViewModel]()
         
+        let allLegs = pollResponse.Legs
+        let allCarriers = pollResponse.Carriers
+        
         for eachItinerary in pollResponse.Itineraries {
-            let airlineUrl = URL(string: "https://logos.skyscnr.com/images/airlines/favicon/EZ.png")
-            let outboundInformation =  FlightInformationViewModel(airlineUrl: airlineUrl, time: "15:35 - 17:00", information: "BUD-LGW, Wizz Air", connection: "Direct", duration: "2h 35m")
-            let inboundInformation =  FlightInformationViewModel(airlineUrl: airlineUrl, time: "15:35 - 17:00", information: "BUD-LGW, Wizz Air", connection: "Direct", duration: "2h 35m")
             
-            for eachPrice in eachItinerary.PricingOptions {
-                let price = "\(eachPrice.Price)€"
-                let flightViewModel = FlightViewModel(outboundInformation: outboundInformation, inboundInformation: inboundInformation, price: price, bookingInformation: "2 bookings required", rating: "10.0", information: "Cheapest Shortest")
-                flights.append(flightViewModel)
+            if let outboundInformation = outboundInformationWith(eachItinerary, allLegs: allLegs, allCarriers: allCarriers), let inboundInformation = inboundInformationWith(eachItinerary, allLegs: allLegs, allCarriers: allCarriers) {
+                for eachPrice in eachItinerary.PricingOptions {
+                    let price = "\(eachPrice.Price)€"
+                    let flightViewModel = FlightViewModel(outboundInformation: outboundInformation, inboundInformation: inboundInformation, price: price, bookingInformation: "2 bookings required", rating: "10.0", information: "Cheapest Shortest")
+                    flights.append(flightViewModel)
+                }
             }
         }
         
         return flights
     }
 
+}
+
+extension FlightViewModel {
+    
+    private static func outboundInformationWith(_ itinerary: ItinerarieResponse, allLegs: [LegResponse], allCarriers: [CarrierResponse]) -> FlightInformationViewModel? {
+        let leg = allLegs.filter {$0.Id == itinerary.OutboundLegId}.first
+        
+        guard let currentLeg = leg, let currentCarrierId = currentLeg.Carriers.first else {
+            return nil
+        }
+        
+        let carrier = allCarriers.filter {$0.Id == currentCarrierId}.first
+        guard let currentCarrier = carrier else {
+            return nil
+        }
+        
+        let airlineUrl = URL(string: "https://logos.skyscnr.com/images/airlines/favicon/\(currentCarrier.Code).png")
+        
+        let totalStops = currentLeg.Stops.count
+        let connection = totalStops > 0 ? "\(totalStops) scale" : "Direct"
+        
+        return FlightInformationViewModel(airlineUrl: airlineUrl, time: "15:35 - 17:00", information: "BUD-LGW, Wizz Air", connection: connection, duration: "2h 35m")
+    }
+    
+    private static func inboundInformationWith(_ itinerary: ItinerarieResponse, allLegs: [LegResponse], allCarriers: [CarrierResponse]) -> FlightInformationViewModel? {
+        let leg = allLegs.filter {$0.Id == itinerary.InboundLegId}.first
+        
+        guard let currentLeg = leg, let currentCarrierId = currentLeg.Carriers.first else {
+            return nil
+        }
+        
+        let carrier = allCarriers.filter {$0.Id == currentCarrierId}.first
+        guard let currentCarrier = carrier else {
+            return nil
+        }
+        
+        let airlineUrl = URL(string: "https://logos.skyscnr.com/images/airlines/favicon/\(currentCarrier.Code).png")
+        
+        let totalStops = currentLeg.Stops.count
+        let connection = totalStops > 0 ? "\(totalStops) scale" : "Direct"
+        
+        return FlightInformationViewModel(airlineUrl: airlineUrl, time: "15:35 - 17:00", information: "BUD-LGW, Wizz Air", connection: connection, duration: "2h 35m")
+    }
+    
 }
 
 extension FlightViewModel {

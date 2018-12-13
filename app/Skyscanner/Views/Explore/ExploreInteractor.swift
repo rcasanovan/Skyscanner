@@ -76,7 +76,7 @@ extension ExploreInteractor: ExploreInteractorDelegate {
             return
         }
         
-        getFlightsWith(pollEndpoint: pollEndPoint, pageIndex: pageIndex, pageSize: pageSize, simulatedJSONFile: "SimulatedResponse") { [weak self] (response) in
+        getFlightsWith(pollEndpoint: pollEndPoint, pageIndex: pageIndex, pageSize: pageSize) { [weak self] (response) in
             guard let `self` = self else { return }
             switch response {
             case .success(let pollResponse):

@@ -37,7 +37,7 @@ extension ExplorePresenter {
     }
     
     private func createSession() {
-        view?.showProgress(true)
+        view?.showProgress(true, status: "connecting with Skyscanner")
         interactor.createSession { [weak self] (success, error) in
             guard let `self` = self else { return }
             
@@ -58,7 +58,7 @@ extension ExplorePresenter {
     }
     
     private func getFlights() {
-        view?.showProgress(true)
+        view?.showProgress(true, status: "Getting flights")
         interactor.getFlights { [weak self] (flights, success, error) in
             guard let `self` = self else { return }
             

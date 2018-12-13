@@ -23,7 +23,11 @@ class BaseViewController: UIViewController {
         setupViews()
     }
     
-    public func showLoader(_ show: Bool) {
+    public func showLoader(_ show: Bool, status: String? = nil) {
+        if let status = status {
+            show == true ? SVProgressHUD.show(withStatus: status) : SVProgressHUD.dismiss()
+            return
+        }
         show == true ? SVProgressHUD.show() : SVProgressHUD.dismiss()
     }
     

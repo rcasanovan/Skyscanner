@@ -10,6 +10,7 @@ import Foundation
 
 // View / Presenter
 protocol ExploreViewInjection : class {
+    func showProgress(_ show: Bool, status: String)
     func showProgress(_ show: Bool)
     func loadFlights(_ viewModels: [FlightViewModel])
     func showMessageWith(title: String, message: String, actionTitle: String)
