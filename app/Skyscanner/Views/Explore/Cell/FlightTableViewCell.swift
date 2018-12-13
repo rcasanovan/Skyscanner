@@ -35,6 +35,7 @@ class FlightTableViewCell: UITableViewCell {
     public func bindWithViewModel(_ viewModel: FlightViewModel) {
         outboundFlightView.bindWithViewModel(viewModel.outboundInformation)
         inboundFlightView.bindWithViewModel(viewModel.inboundInformation)
+        flightFooterView.bindWithViewModel(viewModel)
     }
     
 }

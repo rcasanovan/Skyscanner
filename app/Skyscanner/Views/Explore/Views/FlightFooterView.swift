@@ -11,6 +11,7 @@ import UIKit
 class FlightFooterView: UIView {
     
     private let priceLabel: UILabel = UILabel()
+    private let bookingLabel: UILabel = UILabel()
     
     public var height: CGFloat {
         return Layout.height
@@ -26,7 +27,9 @@ class FlightFooterView: UIView {
         setupViews()
     }
     
-    public func bindWithViewModel(_ viewModel: FlightInformationViewModel) {
+    public func bindWithViewModel(_ viewModel: FlightViewModel) {
+        priceLabel.text = viewModel.price
+        bookingLabel.text = viewModel.bookingInformation
     }
     
 }
@@ -35,16 +38,20 @@ class FlightFooterView: UIView {
 extension FlightFooterView {
     
     private func setupViews() {
-        backgroundColor = .yellow
+        backgroundColor = .white
         
         configureSubviews()
         addSubviews()
     }
     
     private func configureSubviews() {
-        priceLabel.font = UIFont.boldSystemFont(ofSize: 22.0)
+        priceLabel.font = UIFont.boldSystemFont(ofSize: 24.0)
         priceLabel.textColor = .black
         priceLabel.textAlignment = .right
+        
+        bookingLabel.font = UIFont.systemFont(ofSize: 14.0)
+        bookingLabel.textColor = .black
+        bookingLabel.textAlignment = .right
     }
     
 }
@@ -58,18 +65,29 @@ extension FlightFooterView {
         
         struct PriceLabel {
             static let trailing: CGFloat = 10.0
-            static let top: CGFloat = 20.0
-            static let height: CGFloat = 24.0
+            static let top: CGFloat = 25.0
+            static let height: CGFloat = 26.0
             static let width: CGFloat = 60.0
+        }
+        
+        struct BookingLabel {
+            static let trailing: CGFloat = 10.0
+            static let top: CGFloat = 10.0
+            static let height: CGFloat = 16.0
+            static let width: CGFloat = 180.0
         }
         
     }
     
     private func addSubviews() {
         addSubview(priceLabel)
+        addSubview(bookingLabel)
         
-        addConstraintsWithFormat("H:[V0(\(Layout.PriceLabel.width))]-\(Layout.PriceLabel.trailing)-|", views: priceLabel)
+        addConstraintsWithFormat("H:[v0(\(Layout.PriceLabel.width))]-\(Layout.PriceLabel.trailing)-|", views: priceLabel)
         addConstraintsWithFormat("V:|-\(Layout.PriceLabel.top)-[v0(\(Layout.PriceLabel.height))]", views: priceLabel)
+        
+        addConstraintsWithFormat("H:[v0(\(Layout.BookingLabel.width))]-\(Layout.BookingLabel.trailing)-|", views: bookingLabel)
+        addConstraintsWithFormat("V:[v0]-\(Layout.BookingLabel.top)-[v1(\(Layout.BookingLabel.height))]", views: priceLabel, bookingLabel)
     }
     
 }
