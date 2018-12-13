@@ -13,6 +13,7 @@ class FlightFooterView: UIView {
     private let priceLabel: UILabel = UILabel()
     private let bookingLabel: UILabel = UILabel()
     private let ratingLabel: UILabel = UILabel()
+    private let informationLabel: UILabel = UILabel()
     
     public var height: CGFloat {
         return Layout.height
@@ -32,6 +33,7 @@ class FlightFooterView: UIView {
         priceLabel.text = viewModel.price
         bookingLabel.text = viewModel.bookingInformation
         ratingLabel.text = viewModel.rating
+        informationLabel.text = viewModel.information
     }
     
 }
@@ -57,6 +59,9 @@ extension FlightFooterView {
         
         ratingLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
         ratingLabel.textColor = .black
+        
+        informationLabel.font = UIFont.systemFont(ofSize: 15.0)
+        informationLabel.textColor = .green
     }
     
 }
@@ -85,7 +90,14 @@ extension FlightFooterView {
         struct RatingLabel {
             static let leading: CGFloat = 10.0
             static let trailing: CGFloat = 10.0
-            static let top: CGFloat = 30.0
+            static let top: CGFloat = 35.0
+            static let height: CGFloat = 17.0
+        }
+        
+        struct InformationLabel {
+            static let leading: CGFloat = 10.0
+            static let trailing: CGFloat = 10.0
+            static let top: CGFloat = 10.0
             static let height: CGFloat = 17.0
         }
         
@@ -95,6 +107,7 @@ extension FlightFooterView {
         addSubview(priceLabel)
         addSubview(bookingLabel)
         addSubview(ratingLabel)
+        addSubview(informationLabel)
         
         addConstraintsWithFormat("H:[v0(\(Layout.PriceLabel.width))]-\(Layout.PriceLabel.trailing)-|", views: priceLabel)
         addConstraintsWithFormat("V:|-\(Layout.PriceLabel.top)-[v0(\(Layout.PriceLabel.height))]", views: priceLabel)
@@ -104,6 +117,9 @@ extension FlightFooterView {
         
         addConstraintsWithFormat("H:|-\(Layout.RatingLabel.leading)-[v0]-\(Layout.RatingLabel.trailing)-[v1]", views: ratingLabel, priceLabel)
         addConstraintsWithFormat("V:|-\(Layout.RatingLabel.top)-[v0(\(Layout.RatingLabel.height))]", views: ratingLabel)
+        
+        addConstraintsWithFormat("H:|-\(Layout.InformationLabel.leading)-[v0]-\(Layout.InformationLabel.trailing)-[v1]", views: informationLabel, bookingLabel)
+        addConstraintsWithFormat("V:[v0]-\(Layout.InformationLabel.top)-[v1(\(Layout.InformationLabel.height))]", views: ratingLabel, informationLabel)
     }
     
 }
