@@ -17,6 +17,7 @@ public struct PollResponse: Decodable {
     let Carriers: [CarrierResponse]
     let Agents: [AgentResponse]
     let Places: [PlaceResponse]
+    let Currencies: [CurrencyResponse]
     
 }
 
@@ -106,6 +107,12 @@ public struct PlaceResponse: Decodable {
     let Code: String
     let Name: String
     
+}
+
+public struct CurrencyResponse: Decodable {
+    let Code: String
+    let Symbol: String
+    let SymbolOnLeft: Bool
 }
 
 

@@ -47,12 +47,15 @@ struct FlightViewModel {
         let allLegs = pollResponse.Legs
         let allCarriers = pollResponse.Carriers
         let allPlaces = pollResponse.Places
+        guard let currency = pollResponse.Currencies.first else {
+            return flights
+        }
         
         for eachItinerary in pollResponse.Itineraries {
             
             if let outboundInformation = outboundInformationWith(eachItinerary, allLegs: allLegs, allCarriers: allCarriers, allPlaces: allPlaces), let inboundInformation = inboundInformationWith(eachItinerary, allLegs: allLegs, allCarriers: allCarriers, allPlaces: allPlaces) {
                 for eachPrice in eachItinerary.PricingOptions {
-                    let price = "\(eachPrice.Price) €"
+                    let price = currency.SymbolOnLeft ? "\(currency.Symbol) \(eachPrice.Price)" : "\(eachPrice.Price) \(currency.Symbol)"
                     let flightViewModel = FlightViewModel(outboundInformation: outboundInformation, inboundInformation: inboundInformation, price: price, bookingInformation: "2 bookings required", rating: "10.0", information: "Cheapest Shortest")
                     flights.append(flightViewModel)
                 }
