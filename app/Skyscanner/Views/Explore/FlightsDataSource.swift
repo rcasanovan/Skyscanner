@@ -27,6 +27,8 @@ extension FlightsDatasource {
         }
         
         //__ Bind the cell
+        let viewModel = flights[indexPath.row]
+        cell.bindWithViewModel(viewModel)
         
         return cell
     }

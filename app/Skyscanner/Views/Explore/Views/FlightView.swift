@@ -30,6 +30,13 @@ class FlightView: UIView {
         setupViews()
     }
     
+    public func bindWithViewModel(_ viewModel: FlightInformationViewModel) {
+        timeLabel.text = viewModel.time
+        informationLabel.text = viewModel.information
+        connectionLabel.text = viewModel.connection
+        durationLabel.text = viewModel.duration
+    }
+    
 }
 
 // MARK: - Setup views

@@ -31,14 +31,10 @@ class FlightTableViewCell: UITableViewCell {
         super.prepareForReuse()
     }
     
-//    public func bindWithViewModel(_ viewModel: HDAccountViewModel) {
-//        titleLabel.text = "Mi cuenta"
-//        emailLabel.text = viewModel.title
-//
-//        if let urlString = viewModel.userImageUrl, let url = URL(string: urlString) {
-//            userImageView.hnk_setImage(from: url, placeholder: nil)
-//        }
-//    }
+    public func bindWithViewModel(_ viewModel: FlightViewModel) {
+        outboundFlightView.bindWithViewModel(viewModel.outboundInformation)
+        inboundFlightView.bindWithViewModel(viewModel.inboundInformation)
+    }
     
 }
 
