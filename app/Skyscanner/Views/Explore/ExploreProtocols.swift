@@ -11,8 +11,16 @@ import Foundation
 // View / Presenter
 protocol ExploreViewInjection : class {
     func loadFlights(_ viewModels: [FlightViewModel])
+    func showMessageWith(title: String, message: String, actionTitle: String)
 }
 
 protocol ExplorePresenterDelegate : class {
     func viewDidLoad()
+}
+
+// Presenter / Interactor
+typealias ExploreGetFlightsCompletionBlock = (_ viewModel: [FlightViewModel]?, _ success: Bool, _ error: ResultError?) -> Void
+
+protocol ExploreInteractorDelegate : class {
+    func getFlights(completion: @escaping ExploreGetFlightsCompletionBlock)
 }

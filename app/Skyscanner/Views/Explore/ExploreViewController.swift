@@ -19,6 +19,7 @@ class ExploreViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        presenter?.viewDidLoad()
     }
     
 }
@@ -38,7 +39,7 @@ extension ExploreViewController {
     
     private func configureSubviews() {
         flightsContainerView.backgroundColor = .clear
-        flightsTableView = UITableView(frame: flightsContainerView.bounds, style: .grouped)
+        flightsTableView = UITableView(frame: flightsContainerView.bounds, style: .plain)
         flightsTableView?.tableFooterView = UIView()
         flightsTableView?.separatorStyle = .none
         flightsTableView?.rowHeight = UITableView.automaticDimension
@@ -101,4 +102,7 @@ extension ExploreViewController: ExploreViewInjection {
         flightsTableView?.reloadData()
     }
     
+    func showMessageWith(title: String, message: String, actionTitle: String) {
+        super.showAlertWith(title: title, message: message, actionTitle: actionTitle)
+    }
 }
