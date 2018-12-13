@@ -68,7 +68,6 @@ extension FlightTableViewCell {
      */
     private struct Layout {
         
-        static let top: CGFloat = 10.0
         static let bottom: CGFloat = 10.0
         
     }
@@ -83,7 +82,7 @@ extension FlightTableViewCell {
         addConstraintsWithFormat("H:|[v0]|", views: outboundFlightView)
         addConstraintsWithFormat("H:|[v0]|", views: inboundFlightView)
         
-        addConstraintsWithFormat("V:|-\(Layout.top)-[v0(\(outboundFlightView.height))][v1(\(inboundFlightView.height))]-\(Layout.bottom)-|", views: outboundFlightView, inboundFlightView)
+        addConstraintsWithFormat("V:|[v0(\(outboundFlightView.height))][v1(\(inboundFlightView.height))]-\(Layout.bottom)-|", views: outboundFlightView, inboundFlightView)
     }
     
 }

@@ -98,12 +98,28 @@ extension FlightView {
             static let width: CGFloat = 60.0
         }
         
+        struct TimeLabel {
+            static let leading: CGFloat = 10.0
+            static let trailing: CGFloat = 10.0
+            static let top: CGFloat = 10.0
+            static let height: CGFloat = 20.0
+        }
+        
+        struct InformationLabel {
+            static let leading: CGFloat = 10.0
+            static let trailing: CGFloat = 10.0
+            static let top: CGFloat = 10.0
+            static let height: CGFloat = 16.0
+        }
+        
     }
     
     private func addSubviews() {
         addSubview(airlineImageView)
         addSubview(connectionLabel)
         addSubview(durationLabel)
+        addSubview(timeLabel)
+        addSubview(informationLabel)
         
         addConstraintsWithFormat("H:|-\(Layout.AirlineImageView.leading)-[v0(\(Layout.AirlineImageView.width))]", views: airlineImageView)
         addConstraintsWithFormat("V:|-\(Layout.AirlineImageView.top)-[v0(\(Layout.AirlineImageView.height))]-\(Layout.AirlineImageView.bottom)-|", views: airlineImageView)
@@ -113,6 +129,12 @@ extension FlightView {
         
         addConstraintsWithFormat("H:[v0(\(Layout.DurationLabel.width))]-(\(Layout.DurationLabel.trailing))-|", views: durationLabel)
         addConstraintsWithFormat("V:[v0]-\(Layout.DurationLabel.top)-[v1(\(Layout.DurationLabel.height))]", views: connectionLabel, durationLabel)
+        
+        addConstraintsWithFormat("H:[v0]-\(Layout.TimeLabel.leading)-[v1]-(\(Layout.TimeLabel.trailing))-[v2]", views: airlineImageView, timeLabel, connectionLabel)
+        addConstraintsWithFormat("V:|-\(Layout.TimeLabel.top)-[v0(\(Layout.TimeLabel.height))]", views: timeLabel)
+        
+        addConstraintsWithFormat("H:[v0]-\(Layout.InformationLabel.leading)-[v1]-(\(Layout.InformationLabel.trailing))-[v2]", views: airlineImageView, informationLabel, connectionLabel)
+        addConstraintsWithFormat("V:[v0]-\(Layout.ConnectionLabel.top)-[v1(\(Layout.ConnectionLabel.height))]", views: timeLabel, informationLabel)
     }
     
 }
