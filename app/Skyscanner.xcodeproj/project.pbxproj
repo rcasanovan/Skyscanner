@@ -14,6 +14,7 @@
 		C83003AD21C27AD700CCCAC8 /* ExploreProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83003AC21C27AD700CCCAC8 /* ExploreProtocols.swift */; };
 		C83003AF21C27B4000CCCAC8 /* ExplorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83003AE21C27B4000CCCAC8 /* ExplorePresenter.swift */; };
 		C83003B121C27C4100CCCAC8 /* ExploreInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83003B021C27C4100CCCAC8 /* ExploreInteractor.swift */; };
+		C83003B321C288BD00CCCAC8 /* FlightFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83003B221C288BD00CCCAC8 /* FlightFooterView.swift */; };
 		C86257D321C10D010091DD3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86257D221C10D010091DD3A /* AppDelegate.swift */; };
 		C86257DA21C10D020091DD3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C86257D921C10D020091DD3A /* Assets.xcassets */; };
 		C86257DD21C10D020091DD3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86257DB21C10D020091DD3A /* LaunchScreen.storyboard */; };
@@ -64,6 +65,7 @@
 		C83003AC21C27AD700CCCAC8 /* ExploreProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreProtocols.swift; sourceTree = "<group>"; };
 		C83003AE21C27B4000CCCAC8 /* ExplorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorePresenter.swift; sourceTree = "<group>"; };
 		C83003B021C27C4100CCCAC8 /* ExploreInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreInteractor.swift; sourceTree = "<group>"; };
+		C83003B221C288BD00CCCAC8 /* FlightFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightFooterView.swift; sourceTree = "<group>"; };
 		C86257CF21C10D010091DD3A /* Skyscanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skyscanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86257D221C10D010091DD3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C86257D921C10D020091DD3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				C83003A221C26F7200CCCAC8 /* FlightView.swift */,
+				C83003B221C288BD00CCCAC8 /* FlightFooterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				C83003B121C27C4100CCCAC8 /* ExploreInteractor.swift in Sources */,
 				C862580721C10DED0091DD3A /* RequestErrors.swift in Sources */,
 				C862583721C1912A0091DD3A /* UIView.swift in Sources */,
+				C83003B321C288BD00CCCAC8 /* FlightFooterView.swift in Sources */,
 				C83003A321C26F7200CCCAC8 /* FlightView.swift in Sources */,
 				C83003A621C2726100CCCAC8 /* FlightTableViewCell.swift in Sources */,
 				C862582821C1857C0091DD3A /* BaseViewController.swift in Sources */,
