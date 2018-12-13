@@ -10,6 +10,8 @@ import UIKit
 
 class FlightFooterView: UIView {
     
+    private let priceLabel: UILabel = UILabel()
+    
     public var height: CGFloat {
         return Layout.height
     }
@@ -40,6 +42,9 @@ extension FlightFooterView {
     }
     
     private func configureSubviews() {
+        priceLabel.font = UIFont.boldSystemFont(ofSize: 22.0)
+        priceLabel.textColor = .black
+        priceLabel.textAlignment = .right
     }
     
 }
@@ -51,10 +56,20 @@ extension FlightFooterView {
         
         static let height: CGFloat = 100.0
         
+        struct PriceLabel {
+            static let trailing: CGFloat = 10.0
+            static let top: CGFloat = 20.0
+            static let height: CGFloat = 24.0
+            static let width: CGFloat = 60.0
+        }
+        
     }
     
     private func addSubviews() {
+        addSubview(priceLabel)
         
+        addConstraintsWithFormat("H:[V0(\(Layout.PriceLabel.width))]-\(Layout.PriceLabel.trailing)-|", views: priceLabel)
+        addConstraintsWithFormat("V:|-\(Layout.PriceLabel.top)-[v0(\(Layout.PriceLabel.height))]", views: priceLabel)
     }
     
 }
