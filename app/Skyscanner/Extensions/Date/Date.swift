@@ -14,7 +14,7 @@ extension Date {
         case monday, tuesday, wednesday, thursday, friday, saturday, sunday
     }
     
-    static func today() -> Date {
+    public static func today() -> Date {
         return Date()
     }
     
@@ -36,6 +36,23 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
+    public func getStringHHmmFormat() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        return dateFormatter.string(from: self)
+    }
+    
+    public static func getISODateWithString(_ stringDate: String) -> Date? {
+        let isoFormatter = DateFormatter()
+        isoFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        isoFormatter.locale = Locale(identifier: "en_US_POSIX")
+        return isoFormatter.date(from: stringDate)
+    }
+    
+    public static func minutesToHoursMinutes(minutes : Int) -> (hours : Int , leftMinutes : Int) {
+        return (minutes / 60, (minutes % 60))
+    }
+        
 }
 
 // MARK: Helper methods

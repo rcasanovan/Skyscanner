@@ -77,6 +77,10 @@ extension FlightViewModel {
             return nil
         }
         
+        guard let departureHHmmTime = Date.getISODateWithString(currentLeg.Departure)?.getStringHHmmFormat(), let arrivalHHmmTime = Date.getISODateWithString(currentLeg.Arrival)?.getStringHHmmFormat() else {
+            return nil
+        }
+        
         let airlineUrl = URL(string: "https://logos.skyscnr.com/images/airlines/favicon/\(currentCarrier.Code).png")
         
         let totalStops = currentLeg.Stops.count
@@ -84,7 +88,12 @@ extension FlightViewModel {
         
         let information = "BUD-LGW, \(currentCarrier.Name)"
         
-        return FlightInformationViewModel(airlineUrl: airlineUrl, time: "15:35 - 17:00", information: information, connection: connection, duration: "2h 35m")
+        let time = "\(departureHHmmTime) - \(arrivalHHmmTime)"
+        
+        let timeDuration = Date.minutesToHoursMinutes(minutes: currentLeg.Duration)
+        let duration = "\(timeDuration.hours)h \(timeDuration.leftMinutes)m"
+        
+        return FlightInformationViewModel(airlineUrl: airlineUrl, time: time, information: information, connection: connection, duration: duration)
     }
     
     private static func inboundInformationWith(_ itinerary: ItinerarieResponse, allLegs: [LegResponse], allCarriers: [CarrierResponse]) -> FlightInformationViewModel? {
@@ -99,6 +108,10 @@ extension FlightViewModel {
             return nil
         }
         
+        guard let departureHHmmTime = Date.getISODateWithString(currentLeg.Departure)?.getStringHHmmFormat(), let arrivalHHmmTime = Date.getISODateWithString(currentLeg.Arrival)?.getStringHHmmFormat() else {
+            return nil
+        }
+        
         let airlineUrl = URL(string: "https://logos.skyscnr.com/images/airlines/favicon/\(currentCarrier.Code).png")
         
         let totalStops = currentLeg.Stops.count
@@ -106,7 +119,12 @@ extension FlightViewModel {
         
         let information = "BUD-LGW, \(currentCarrier.Name)"
         
-        return FlightInformationViewModel(airlineUrl: airlineUrl, time: "15:35 - 17:00", information: information, connection: connection, duration: "2h 35m")
+        let time = "\(departureHHmmTime) - \(arrivalHHmmTime)"
+        
+        let timeDuration = Date.minutesToHoursMinutes(minutes: currentLeg.Duration)
+        let duration = "\(timeDuration.hours)h \(timeDuration.leftMinutes)m"
+        
+        return FlightInformationViewModel(airlineUrl: airlineUrl, time: time, information: information, connection: connection, duration: duration)
     }
     
 }
