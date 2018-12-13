@@ -20,7 +20,7 @@ struct PollRequest: RequestProtocol {
     var contentType: ContentType = .json
     var processHeader: Bool?
     
-    init(pollEndpoint: String, pageIndex: Int, pageSize: UInt) {
+    init(pollEndpoint: String, pageIndex: UInt, pageSize: UInt) {
         url = Endpoint.pollResultsWith(pollEndpoint: pollEndpoint, pageIndex: pageIndex, pageSize: pageSize).url
     }
     

@@ -41,7 +41,7 @@ enum Endpoint: EndpointProtocol {
     }
     
     case createSession()
-    case pollResultsWith(pollEndpoint: String, pageIndex: Int, pageSize: UInt)
+    case pollResultsWith(pollEndpoint: String, pageIndex: UInt, pageSize: UInt)
 }
 
 extension EndpointProtocol {

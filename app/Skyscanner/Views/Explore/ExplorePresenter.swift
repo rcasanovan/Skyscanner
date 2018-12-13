@@ -9,6 +9,7 @@
 import UIKit
 
 typealias getFlightsCompletionBlock = (Result<PollResponse?>) -> Void
+typealias createSessionCompletionBlock = (Result<CreateSessionResponse?>) -> Void
 
 class ExplorePresenter {
     
@@ -25,6 +26,33 @@ class ExplorePresenter {
 
 // MARK: - Private section
 extension ExplorePresenter {
+    
+    private func getFlightsInformation() {
+        if !interactor.isSessionCreated() {
+            createSession()
+            return
+        }
+        
+        getFlights()
+    }
+    
+    private func createSession() {
+        interactor.createSession { [weak self] (success, error) in
+            guard let `self` = self else { return }
+            
+            if let error = error {
+                self.view?.showMessageWith(title: "Error title", message: error.localizedDescription, actionTitle: "Error action title")
+                return
+            }
+            
+            if !success {
+                self.view?.showMessageWith(title: "Error title", message: "Error message", actionTitle: "Error action title")
+                return
+            }
+            
+            self.getFlights()
+        }
+    }
     
     private func getFlights() {
         interactor.getFlights { [weak self] (flights, success, error) in
@@ -53,7 +81,7 @@ extension ExplorePresenter {
 extension ExplorePresenter: ExplorePresenterDelegate {
     
     func viewDidLoad() {
-        getFlights()
+        getFlightsInformation()
     }
     
 }

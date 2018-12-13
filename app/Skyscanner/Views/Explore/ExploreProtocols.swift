@@ -20,7 +20,10 @@ protocol ExplorePresenterDelegate : class {
 
 // Presenter / Interactor
 typealias ExploreGetFlightsCompletionBlock = (_ viewModel: [FlightViewModel]?, _ success: Bool, _ error: ResultError?) -> Void
+typealias ExploreCreateSessionCompletionBlock = (_ success: Bool, _ error: ResultError?) -> Void
 
 protocol ExploreInteractorDelegate : class {
+    func isSessionCreated() -> Bool
+    func createSession(completion: @escaping ExploreCreateSessionCompletionBlock)
     func getFlights(completion: @escaping ExploreGetFlightsCompletionBlock)
 }

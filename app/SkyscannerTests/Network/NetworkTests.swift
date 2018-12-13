@@ -33,7 +33,7 @@ class NetworkTests: XCTestCase {
         requestManager.send(request: sessionRequest)
     }
     
-    func testPollResultsWith(pollEndpoint: String, pageIndex: Int, pageSize: UInt, simulatedJSONFile: String? = nil,  completion: @escaping pollCompletionBlock) {
+    func testPollResultsWith(pollEndpoint: String, pageIndex: UInt, pageSize: UInt, simulatedJSONFile: String? = nil,  completion: @escaping pollCompletionBlock) {
         var pollRequest = PollRequest(pollEndpoint: pollEndpoint, pageIndex: pageIndex, pageSize: pageSize)
         
         pollRequest.completion = completion
