@@ -97,6 +97,10 @@ extension ExploreViewController {
 
 extension ExploreViewController: ExploreViewInjection {
     
+    func showProgress(_ show: Bool) {
+        showLoader(show)
+    }
+    
     func loadFlights(_ viewModels: [FlightViewModel]) {
         dataSource?.flights = viewModels
         flightsTableView?.reloadData()

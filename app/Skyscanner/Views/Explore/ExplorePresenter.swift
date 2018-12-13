@@ -37,8 +37,11 @@ extension ExplorePresenter {
     }
     
     private func createSession() {
+        view?.showProgress(true)
         interactor.createSession { [weak self] (success, error) in
             guard let `self` = self else { return }
+            
+            self.view?.showProgress(false)
             
             if let error = error {
                 self.view?.showMessageWith(title: "Error title", message: error.localizedDescription, actionTitle: "Error action title")
@@ -55,8 +58,11 @@ extension ExplorePresenter {
     }
     
     private func getFlights() {
+        view?.showProgress(true)
         interactor.getFlights { [weak self] (flights, success, error) in
             guard let `self` = self else { return }
+            
+            self.view?.showProgress(false)
             
             if let flights = flights {
                 self.view?.loadFlights(flights)

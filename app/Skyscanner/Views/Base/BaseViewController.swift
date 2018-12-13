@@ -23,6 +23,10 @@ class BaseViewController: UIViewController {
         setupViews()
     }
     
+    public func showLoader(_ show: Bool) {
+        show == true ? SVProgressHUD.show() : SVProgressHUD.dismiss()
+    }
+    
 }
 
 // MARK: - Setup views
