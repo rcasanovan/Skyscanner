@@ -53,10 +53,10 @@ class CustomTitleView: UIView {
         contentStackView.spacing = 5
         
         backgroundColor = .clear
-        titleLabel.font = UIFont.systemFont(ofSize: 15.0)
+        titleLabel.font = UIFont.interUIMediumWithSize(size: 15.0)
         titleLabel.textColor = .white
         
-        subtitleLabel.font = UIFont.systemFont(ofSize: 13.0)
+        subtitleLabel.font = UIFont.interUIMediumWithSize(size: 13.0)
         subtitleLabel.textColor = .white
     }
     

@@ -56,18 +56,18 @@ extension FlightFooterView {
     }
     
     private func configureSubviews() {
-        priceLabel.font = UIFont.boldSystemFont(ofSize: 24.0)
+        priceLabel.font = UIFont.interUIBoldWithSize(size: 24.0)
         priceLabel.textColor = .black()
         priceLabel.textAlignment = .right
         
-        bookingLabel.font = UIFont.systemFont(ofSize: 14.0)
+        bookingLabel.font = UIFont.interUIMediumWithSize(size: 14.0)
         bookingLabel.textColor = .gray()
         bookingLabel.textAlignment = .right
         
-        ratingLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
+        ratingLabel.font = UIFont.interUIBoldWithSize(size: 15.0)
         ratingLabel.textColor = .black()
         
-        informationLabel.font = UIFont.systemFont(ofSize: 15.0)
+        informationLabel.font = UIFont.interUIMediumWithSize(size: 15.0)
         informationLabel.textColor = .green()
     }
     

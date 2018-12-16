@@ -45,7 +45,7 @@ extension BaseViewController {
     }
     
     private func configureSubviews() {
-        titleLabel.font = UIFont.systemFont(ofSize: 16.0)
+        titleLabel.font = UIFont.interUIMediumWithSize(size: 16.0)
         titleLabel.textColor = .black()
         titleLabel.textAlignment = .center
         titleLabel.text = "Under construction"

@@ -64,17 +64,17 @@ extension FlightView {
         airlineImageView.contentMode = .scaleAspectFit
         airlineImageView.frame = CGRect(x: 0.0, y: 0.0, width: Layout.AirlineImageView.width, height: Layout.AirlineImageView.height)
         
-        timeLabel.font = UIFont.interUIMediumWithSize(size: 18.0) //boldSystemFont(ofSize: 18.0)
+        timeLabel.font = UIFont.interUIMediumWithSize(size: 18.0)
         timeLabel.textColor = .black()
         
-        informationLabel.font = UIFont.systemFont(ofSize: 14.0)
+        informationLabel.font = UIFont.interUIMediumWithSize(size: 14.0)
         informationLabel.textColor = .gray()
         
-        connectionLabel.font = UIFont.boldSystemFont(ofSize: 18.0)
+        connectionLabel.font = UIFont.interUIBoldWithSize(size: 18.0)
         connectionLabel.textColor = .black()
         connectionLabel.textAlignment = .right
         
-        durationLabel.font = UIFont.systemFont(ofSize: 14.0)
+        durationLabel.font = UIFont.interUIMediumWithSize(size: 14.0)
         durationLabel.textColor = .gray()
         durationLabel.textAlignment = .right
     }
