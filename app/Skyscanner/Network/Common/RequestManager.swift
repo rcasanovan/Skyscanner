@@ -113,14 +113,14 @@ class RequestManager {
                     do {
                         let error = try JSONDecoder().decode(RequestErrorResponse.self, from: data)
                         print("Received Server error. Reason: \((error.reason ?? "Unknown")). Info: \(error.errors)")
-                        request.completion?(Result.failure(ResultError.serverError(underlying: error)))
+                        request.completion?(Result.failure(ResultError.serverError(code: httpCode, underlying: error)))
                     } catch {
                         print("Unknown error: \(error)")
                         if let errorDescription = String(data: data, encoding: .utf8) {
                             print(errorDescription)
                         }
                         
-                        request.completion?(Result.failure(ResultError.unknownError(underlaying: error)))
+                        request.completion?(Result.failure(ResultError.unknownError(code: httpCode, underlying: error)))
                     }
                     
                     return

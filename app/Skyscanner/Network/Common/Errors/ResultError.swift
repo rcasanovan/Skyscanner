@@ -14,24 +14,33 @@ enum ResultError: Error {
             return "Network error. HTTP Code \(code.intValue)"
         case .serverError(let underlying):
             return "Server error: \(String(describing: underlying))"
-        case .parsingError(let message):
-            return "Parsing error: \(message)"
         default:
             return "Unknown error"
         }
     }
     
     case networkError(code: HTTPCode)
-    case serverError(underlying: RequestErrorResponse)
-    case unknownError(underlaying: Error)
+    case serverError(code: HTTPCode, underlying: RequestErrorResponse)
+    case unknownError(code: HTTPCode, underlying: Error)
     case parsingError(message: String)
     case internalError(message: String)
+    case noInternet
     
     init(error: Error) {
-        self = .unknownError(underlaying: error)
+        self = .unknownError(code: HTTPCode(intValue: -1), underlying: error)
     }
     
     var isConnectionError: Bool {
         return false // TODO:
     }
+    
+    var httpCode: HTTPCode? {
+        switch self {
+        case .networkError(let code), .serverError(let code, _), .unknownError(let code, _):
+            return code
+        default:
+            return nil
+        }
+    }
+    
 }

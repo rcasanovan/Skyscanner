@@ -81,6 +81,10 @@ extension ExplorePresenter {
             }
             
             if let error = error {
+                if let httpCode = error.httpCode, httpCode.isSessionError {
+                    self.getFlightsInformation()
+                    return
+                }
                 self.view?.showMessageWith(title: "Oops... 🧐", message: error.localizedDescription, actionTitle: "Accept")
                 return
             }

@@ -21,6 +21,7 @@ class ExploreInteractor {
         pageIndex = 0
         pageSize = 1000
         flightsViewModel = []
+        pollEndPoint = SessionManager.shared.getPollEndpoint()
     }
     
 }
@@ -56,8 +57,7 @@ extension ExploreInteractor: ExploreInteractorDelegate {
     }
     
     func isSessionCreated() -> Bool {
-        //__ TODO
-        return false
+        return SessionManager.shared.isSessionCreated()
     }
     
     func createSession(completion: @escaping ExploreCreateSessionCompletionBlock) {
@@ -69,6 +69,9 @@ extension ExploreInteractor: ExploreInteractorDelegate {
             guard let `self` = self else { return }
             switch response {
             case .success(let sessionResponse):
+                if let sessionResponse = sessionResponse {
+                    SessionManager.shared.addValue(sessionResponse.Location, forKey: Fields.pollEndpoint)
+                }
                 self.pollEndPoint = sessionResponse?.Location
                 completion(true, nil)
             case .failure(let error):
@@ -104,6 +107,11 @@ extension ExploreInteractor: ExploreInteractorDelegate {
                 self.flightsViewModel.append(contentsOf: responseViewModel)
                 completion(self.flightsViewModel, true, nil, self.allFlightsSync)
             case .failure(let error):
+                if let httpCode = error.httpCode, httpCode.isSessionError {
+                    SessionManager.shared.clearSession()
+                    self.clear()
+                }
+                
                 completion(nil, false, error, self.allFlightsSync)
             }
         }

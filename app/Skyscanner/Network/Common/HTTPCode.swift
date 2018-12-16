@@ -26,6 +26,10 @@ struct HTTPCode {
     public var isClientError: Bool {
         return isIn(range: 400...499)
     }
+    /// Session Error - The session has expired. A new session must be created.
+    public var isSessionError: Bool {
+        return isIn(range: 410...410)
+    }
     /// Server Error - The server failed to fulfill an apparently valid request.
     public var isServerError: Bool {
         return isIn(range: 500...599)

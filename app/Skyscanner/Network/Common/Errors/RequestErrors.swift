@@ -50,7 +50,7 @@ struct RequestError: Decodable {
     }
 }
 
-enum IMFieldErrorResponseState: String, Decodable {
+enum FieldErrorResponseState: String, Decodable {
     case missing
     case invalid
 }

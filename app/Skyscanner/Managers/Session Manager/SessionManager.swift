@@ -11,13 +11,13 @@ import SwiftyPlistManager
 
 public struct Fields {
     
-    static let session: String = "session"
+    static let pollEndpoint: String = "pollEndpoint"
     
 }
 
 class SessionManager: NSObject {
     
-    static let shared: HDSessionManager = { return HDSessionManager() }()
+    static let shared: SessionManager = { return SessionManager() }()
     public var verbose: Bool = false
     
     public func addValue(_ value: Any, forKey: String) {
@@ -43,15 +43,23 @@ class SessionManager: NSObject {
     }
     
     public func clearSession() {
-        addValue(false, forKey: Fields.session)
+        addValue("", forKey: Fields.pollEndpoint)
     }
     
     public func isSessionCreated() -> Bool {
-        guard let session = getValueForKey(Fields.session) as? String, !session.isEmpty else {
+        guard let session = getValueForKey(Fields.pollEndpoint) as? String, !session.isEmpty else {
             return false
         }
         
         return true
+    }
+    
+    public func getPollEndpoint() -> String? {
+        guard let session = getValueForKey(Fields.pollEndpoint) as? String, !session.isEmpty else {
+            return nil
+        }
+        
+        return session
     }
     
 }
