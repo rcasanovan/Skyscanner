@@ -21,6 +21,8 @@ protocol ExplorePresenterDelegate : class {
     func viewDidLoad()
     func loadNextPage()
     func refreshResults()
+    func filterPressed()
+    func sortPressed()
 }
 
 // Presenter / Interactor

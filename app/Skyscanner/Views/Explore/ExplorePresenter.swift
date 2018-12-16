@@ -115,4 +115,12 @@ extension ExplorePresenter: ExplorePresenterDelegate {
         getFlightsInformation()
     }
     
+    func sortPressed() {
+        view?.showMessageWith(title: "Oops... 🧐", message: "This option is under construction and is out of the test purpose", actionTitle: "Accept")
+    }
+    
+    func filterPressed() {
+        view?.showMessageWith(title: "Oops... 🧐", message: "This option is under construction and is out of the test purpose", actionTitle: "Accept")
+    }
+    
 }

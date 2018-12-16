@@ -43,6 +43,9 @@ extension ExploreViewController {
     }
     
     private func configureSubviews() {
+        headerView.delegate = self
+        headerView.isUserInteractionEnabled = false
+        
         flightsContainerView.backgroundColor = .clear
         flightsTableView = UITableView(frame: flightsContainerView.bounds, style: .plain)
         flightsTableView?.tableFooterView = UIView()
@@ -120,7 +123,21 @@ extension ExploreViewController {
 extension ExploreViewController {
     
     @objc private func userDidPullToRefresh() {
+        headerView.isUserInteractionEnabled = false
         presenter?.refreshResults()
+    }
+    
+}
+
+// MARK: - HeaderViewDelegate
+extension ExploreViewController: HeaderViewDelegate {
+    
+    func sortPressed() {
+        presenter?.sortPressed()
+    }
+    
+    func filterPressed() {
+        presenter?.filterPressed()
     }
     
 }
@@ -160,6 +177,7 @@ extension ExploreViewController: ExploreViewInjection {
     }
     
     func loadFlights(_ viewModels: [FlightViewModel]) {
+        headerView.isUserInteractionEnabled = !viewModels.isEmpty
         refreshControl.endRefreshing()
         headerView.bindWithTitle("\(viewModels.count) results shown")
         isLoadingNextPage = false
