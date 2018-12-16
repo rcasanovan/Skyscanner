@@ -65,4 +65,8 @@ extension UIColor {
         return colorWithHex(hex: "#f6f5f7")
     }
     
+    public class func blue() -> UIColor {
+        return colorWithHex(hex: "#00b0d5")
+    }
+    
 }

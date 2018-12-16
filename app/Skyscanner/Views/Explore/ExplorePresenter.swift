@@ -81,12 +81,12 @@ extension ExplorePresenter {
             }
             
             if let error = error {
-                self.view?.showMessageWith(title: "Error title", message: error.localizedDescription, actionTitle: "Error action title")
+                self.view?.showMessageWith(title: "Oops... 🧐", message: error.localizedDescription, actionTitle: "Accept")
                 return
             }
             
             if !success {
-                self.view?.showMessageWith(title: "Error title", message: "Error message", actionTitle: "Error action title")
+                self.view?.showMessageWith(title: "Oops... 🧐", message: "Something wrong happened. Please try again", actionTitle: "Accept")
                 return
             }
             

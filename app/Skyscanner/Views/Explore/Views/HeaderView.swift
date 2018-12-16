@@ -54,12 +54,12 @@ extension HeaderView {
     private func configureSubviews() {
         filterButton.titleLabel?.font = UIFont.interUIMediumWithSize(size: 13.0)
         filterButton.setTitle("Filter", for: .normal)
-        filterButton.setTitleColor(.blue, for: .normal)
+        filterButton.setTitleColor(.blue(), for: .normal)
         filterButton.addTarget(self, action: #selector(filterPressed), for: .touchUpInside)
         
         sortButton.titleLabel?.font = UIFont.interUIMediumWithSize(size: 13.0)
         sortButton.setTitle("Sort", for: .normal)
-        sortButton.setTitleColor(.blue, for: .normal)
+        sortButton.setTitleColor(.blue(), for: .normal)
         sortButton.addTarget(self, action: #selector(sortPressed), for: .touchUpInside)
         
         titleLabel.font = UIFont.interUIMediumWithSize(size: 13.0)

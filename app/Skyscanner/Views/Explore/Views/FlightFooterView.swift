@@ -91,7 +91,6 @@ extension FlightFooterView {
             static let trailing: CGFloat = 10.0
             static let top: CGFloat = 10.0
             static let height: CGFloat = 16.0
-            static let width: CGFloat = 180.0
         }
         
         struct RatingLabel {
@@ -119,7 +118,7 @@ extension FlightFooterView {
         addConstraintsWithFormat("H:[v0(\(Layout.PriceLabel.width))]-\(Layout.PriceLabel.trailing)-|", views: priceLabel)
         addConstraintsWithFormat("V:|-\(Layout.PriceLabel.top)-[v0(\(Layout.PriceLabel.height))]", views: priceLabel)
         
-        addConstraintsWithFormat("H:[v0(\(Layout.BookingLabel.width))]-\(Layout.BookingLabel.trailing)-|", views: bookingLabel)
+        addConstraintsWithFormat("H:[v0(>=0.0)]-\(Layout.BookingLabel.trailing)-|", views: bookingLabel)
         addConstraintsWithFormat("V:[v0]-\(Layout.BookingLabel.top)-[v1(\(Layout.BookingLabel.height))]", views: priceLabel, bookingLabel)
         
         addConstraintsWithFormat("H:|-\(Layout.RatingLabel.leading)-[v0]-\(Layout.RatingLabel.trailing)-[v1]", views: ratingLabel, priceLabel)
