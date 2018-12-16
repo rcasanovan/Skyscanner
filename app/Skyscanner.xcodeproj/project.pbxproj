@@ -47,6 +47,7 @@
 		C862583D21C195070091DD3A /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C862583C21C195070091DD3A /* SearchRouter.swift */; };
 		C862583F21C195800091DD3A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C862583E21C195800091DD3A /* ProfileViewController.swift */; };
 		C862584121C195BA0091DD3A /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C862584021C195BA0091DD3A /* ProfileRouter.swift */; };
+		C8CE160F21C681CC00B79F02 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CE160E21C681CC00B79F02 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		C862583C21C195070091DD3A /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
 		C862583E21C195800091DD3A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C862584021C195BA0091DD3A /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		C8CE160E21C681CC00B79F02 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +303,8 @@
 		C862581A21C16F560091DD3A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C8CE160D21C681A000B79F02 /* UIFont */,
+				C8CE160C21C6819900B79F02 /* UIColor */,
 				C862583521C1911C0091DD3A /* UIView */,
 				C862581B21C16F6B0091DD3A /* Date */,
 			);
@@ -424,6 +428,21 @@
 				C862584021C195BA0091DD3A /* ProfileRouter.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		C8CE160C21C6819900B79F02 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				C8CE160E21C681CC00B79F02 /* UIColor.swift */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		C8CE160D21C681A000B79F02 /* UIFont */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIFont;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -649,6 +668,7 @@
 				C862583B21C194D50091DD3A /* SearchViewController.swift in Sources */,
 				C862583D21C195070091DD3A /* SearchRouter.swift in Sources */,
 				C862580D21C11F100091DD3A /* CreateSessionParameterData.swift in Sources */,
+				C8CE160F21C681CC00B79F02 /* UIColor.swift in Sources */,
 				C862581121C120D80091DD3A /* SessionRequest.swift in Sources */,
 				C862580321C10DED0091DD3A /* NetworkHeaders.swift in Sources */,
 				C862580621C10DED0091DD3A /* ResultError.swift in Sources */,

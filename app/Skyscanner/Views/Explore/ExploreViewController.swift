@@ -47,7 +47,7 @@ extension ExploreViewController {
         flightsTableView?.separatorStyle = .none
         flightsTableView?.rowHeight = UITableView.automaticDimension
         flightsTableView?.invalidateIntrinsicContentSize()
-        flightsTableView?.backgroundColor = .lightGray
+        flightsTableView?.backgroundColor = .lightGray()
         flightsTableView?.showsVerticalScrollIndicator = false
         flightsTableView?.delegate = self
         
@@ -73,8 +73,8 @@ extension ExploreViewController {
     }
     
     private func configureNavigationBar() {
-        customTitleView.titleColor = .black
-        customTitleView.subtitleColor = .lightGray
+        customTitleView.titleColor = .black()
+        customTitleView.subtitleColor = .gray()
         navigationItem.titleView = customTitleView
     }
     

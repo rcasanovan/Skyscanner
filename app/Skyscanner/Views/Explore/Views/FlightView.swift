@@ -65,17 +65,17 @@ extension FlightView {
         airlineImageView.frame = CGRect(x: 0.0, y: 0.0, width: Layout.AirlineImageView.width, height: Layout.AirlineImageView.height)
         
         timeLabel.font = UIFont.boldSystemFont(ofSize: 18.0)
-        timeLabel.textColor = .black
+        timeLabel.textColor = .black()
         
         informationLabel.font = UIFont.systemFont(ofSize: 14.0)
-        informationLabel.textColor = .black
+        informationLabel.textColor = .gray()
         
         connectionLabel.font = UIFont.boldSystemFont(ofSize: 18.0)
-        connectionLabel.textColor = .black
+        connectionLabel.textColor = .black()
         connectionLabel.textAlignment = .right
         
         durationLabel.font = UIFont.systemFont(ofSize: 14.0)
-        durationLabel.textColor = .black
+        durationLabel.textColor = .gray()
         durationLabel.textAlignment = .right
     }
 
@@ -90,7 +90,7 @@ extension FlightView {
         
         struct AirlineImageView {
             static let leading: CGFloat = 10.0
-            static let top: CGFloat = 20.0
+            static let top: CGFloat = 25.0
             static let bottom: CGFloat = 25.0
             static let height: CGFloat = 30.0
             static let width: CGFloat = 30.0
