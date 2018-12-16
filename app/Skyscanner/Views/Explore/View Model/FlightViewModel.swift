@@ -47,6 +47,7 @@ struct FlightViewModel {
         let allLegs = pollResponse.Legs
         let allCarriers = pollResponse.Carriers
         let allPlaces = pollResponse.Places
+        let allAgents = pollResponse.Agents
         guard let currency = pollResponse.Currencies.first else {
             return flights
         }
@@ -55,8 +56,11 @@ struct FlightViewModel {
             
             if let outboundInformation = outboundInformationWith(eachItinerary, allLegs: allLegs, allCarriers: allCarriers, allPlaces: allPlaces), let inboundInformation = inboundInformationWith(eachItinerary, allLegs: allLegs, allCarriers: allCarriers, allPlaces: allPlaces) {
                 for eachPrice in eachItinerary.PricingOptions {
+                    let rating = getRating()
+                    let information = getInformation()
+                    let bookingInformation = getBookingInformationWithPricing(eachPrice, allAgents: allAgents)
                     let price = currency.SymbolOnLeft ? "\(currency.Symbol) \(eachPrice.Price)" : "\(eachPrice.Price) \(currency.Symbol)"
-                    let flightViewModel = FlightViewModel(outboundInformation: outboundInformation, inboundInformation: inboundInformation, price: price, bookingInformation: "2 bookings required", rating: "10.0", information: "Cheapest Shortest")
+                    let flightViewModel = FlightViewModel(outboundInformation: outboundInformation, inboundInformation: inboundInformation, price: price, bookingInformation: bookingInformation, rating: rating, information: information)
                     flights.append(flightViewModel)
                 }
             }
@@ -141,6 +145,37 @@ extension FlightViewModel {
         let duration = "\(timeDuration.hours)h \(timeDuration.leftMinutes)m"
         
         return FlightInformationViewModel(airlineUrl: airlineUrl, time: time, information: information, connection: connection, duration: duration)
+    }
+    
+    private static func getRating() -> String {
+        return String(format: "%.2f", Float.random(in: 1.0 ... 10.0))
+    }
+    
+    private static func getInformation() -> String {
+        let bookingInformation = ["Cheapest", "Shorter", "Cheapest Shortest", ""]
+        guard let random = bookingInformation.randomElement() else {
+            return ""
+        }
+        
+        return random
+    }
+    
+    private static func getBookingInformationWithPricing(_ pricing: PricingOptionResponse,  allAgents: [AgentResponse]) -> String {
+        
+        if pricing.Agents.count > 1 {
+            return "\(pricing.Agents.count) required"
+        }
+        
+        guard let agentId = pricing.Agents.first else {
+            return ""
+        }
+        
+        let agent = allAgents.filter {$0.Id == agentId}.first
+        guard let currentAgent = agent else {
+            return ""
+        }
+        
+        return "with \(currentAgent.Name)"
     }
     
 }
