@@ -35,6 +35,8 @@ And I'm managing the 410 response code (Gone – the session has expired. A new 
 
 It would be great to manage all the possible response codes coming from the server.
 
+- Translations: If I had more time it would be great to add translations for the app (localized strings).
+
 
 ### Q) Which parts are you most proud of? And why?
 
@@ -47,6 +49,8 @@ It would be great to manage all the possible response codes coming from the serv
 - PollResponse / CreateSessionResponse: I really love to user codeblae / decodable to process an endpoint response. It's really easy because you can define the struct you're expecting so you don't need to use a wrapper to transform the response.
 
 - Reachability logic: I applied a logic to show a new screen if the device doesn't have reachability.
+
+- Next Monday / Tueday logic: I added a logic to get the next monday date (it doesn't matter if you check the itineraries on wed, sat or any day). You'll get the nect monday / tuesday day.
 
 ### Q) Which parts did you spend the most time with? What did you find most difficult?
 
