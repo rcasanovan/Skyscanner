@@ -1,0 +1,24 @@
+PODS:
+  - Haneke (1.0.2)
+  - SVProgressHUD (2.2.5)
+  - SwiftyPlistManager (1.0.2)
+
+DEPENDENCIES:
+  - Haneke (~> 1.0)
+  - SVProgressHUD (~> 2.2.5)
+  - SwiftyPlistManager (~> 1.0.2)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Haneke
+    - SVProgressHUD
+    - SwiftyPlistManager
+
+SPEC CHECKSUMS:
+  Haneke: 01454a67322faa0dd9d81fc0f447885044e71521
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyPlistManager: 5895924cccb7fe28deccbe14890e8aed78ae78ae
+
+PODFILE CHECKSUM: a4f1d610ab2db84b726ece2484870fc0ee701048
+
+COCOAPODS: 1.5.3
