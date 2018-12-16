@@ -27,6 +27,9 @@ class ReachabilityManager: NSObject {
         wifiReachability?.startNotifier()
         let wifiAnswer = validateAppReachibility(wifiReachability)
         
+        //__ This is a fix for iOS < 10
+        //__ For iOS > 10 Reachability.forLocalWiFi() returns true
+        //__ so we need to to this trick
         var systemVersionLessThaniOS10 = false
         if #available(iOS 10.0, *) {
             systemVersionLessThaniOS10 = false

@@ -5,6 +5,7 @@
 - SVProgressHUD (2.2.5): A clean and lightweight progress HUD for your iOS and tvOS app.
 - Haneke (1.0): A lightweight zero-config image cache for iOS, in Objective-C. In this cas I used "Haneke" instead "HanekeSwift" because the last version of HanekeSwift that with Swift 4 support (0.11.0) is not available via cocoapods
 - SwiftyPlistManager (1.0.2): Lightweight plist data management framework for iOS 10.3+
+- Reachability file: This is the official Apple's Reachability file to validate the device connection
 
 ---
 
@@ -45,9 +46,13 @@ It would be great to manage all the possible response codes coming from the serv
 
 - PollResponse / CreateSessionResponse: I really love to user codeblae / decodable to process an endpoint response. It's really easy because you can define the struct you're expecting so you don't need to use a wrapper to transform the response.
 
+- Reachability logic: I applied a logic to show a new screen if the device doesn't have reachability.
+
 ### Q) Which parts did you spend the most time with? What did you find most difficult?
 
 Probably the most complex part was to process the json response. I needed to jump between all the json struct in order to create the view models to show the data in the user interface. Once I did it everything worked like magic :).
+
+Related with the total itineraries count I didn't see any field in the json response to set this value (XXX of YYY results shown) so I decided to show the total itineraries for the view model (all the combinations).
 
 
 ### Q) How did you find the test overall? If you have any suggestions on how we can improve the test or our API, we'd love to hear them.
