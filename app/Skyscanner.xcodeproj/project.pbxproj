@@ -58,6 +58,8 @@
 		C8CE162021C684FC00B79F02 /* InterUI-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8CE161821C684FC00B79F02 /* InterUI-Italic.ttf */; };
 		C8CE162221C6853000B79F02 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CE162121C6853000B79F02 /* UIFont.swift */; };
 		C8CE162421C68BC800B79F02 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CE162321C68BC800B79F02 /* HeaderView.swift */; };
+		C8CE162821C6993800B79F02 /* Session.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8CE162721C6993800B79F02 /* Session.plist */; };
+		C8CE162A21C6994700B79F02 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CE162921C6994700B79F02 /* SessionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +133,8 @@
 		C8CE161821C684FC00B79F02 /* InterUI-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterUI-Italic.ttf"; sourceTree = "<group>"; };
 		C8CE162121C6853000B79F02 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		C8CE162321C68BC800B79F02 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		C8CE162721C6993800B79F02 /* Session.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Session.plist; sourceTree = "<group>"; };
+		C8CE162921C6994700B79F02 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +226,7 @@
 		C86257D121C10D010091DD3A /* Skyscanner */ = {
 			isa = PBXGroup;
 			children = (
+				C8CE162521C6991E00B79F02 /* Managers */,
 				C846805321C2958D0003E2E1 /* Skyscanner-Bridging-Header.h */,
 				C86257D221C10D010091DD3A /* AppDelegate.swift */,
 				C862582521C185570091DD3A /* Views */,
@@ -483,6 +488,23 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		C8CE162521C6991E00B79F02 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C8CE162621C6992300B79F02 /* Session Manager */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		C8CE162621C6992300B79F02 /* Session Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C8CE162721C6993800B79F02 /* Session.plist */,
+				C8CE162921C6994700B79F02 /* SessionManager.swift */,
+			);
+			path = "Session Manager";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -579,6 +601,7 @@
 				C8CE161D21C684FC00B79F02 /* InterUI-BoldItalic.ttf in Resources */,
 				C8CE161F21C684FC00B79F02 /* InterUI-Regular.ttf in Resources */,
 				C8CE161A21C684FC00B79F02 /* InterUI-Black.ttf in Resources */,
+				C8CE162821C6993800B79F02 /* Session.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +626,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-SkyscannerTests/Pods-SkyscannerTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Haneke/Haneke.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyPlistManager/SwiftyPlistManager.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -610,6 +634,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Haneke.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyPlistManager.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -649,6 +674,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Skyscanner/Pods-Skyscanner-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Haneke/Haneke.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyPlistManager/SwiftyPlistManager.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -656,6 +682,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Haneke.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyPlistManager.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -715,6 +742,7 @@
 				C83003AD21C27AD700CCCAC8 /* ExploreProtocols.swift in Sources */,
 				C862583B21C194D50091DD3A /* SearchViewController.swift in Sources */,
 				C862583D21C195070091DD3A /* SearchRouter.swift in Sources */,
+				C8CE162A21C6994700B79F02 /* SessionManager.swift in Sources */,
 				C862580D21C11F100091DD3A /* CreateSessionParameterData.swift in Sources */,
 				C8CE160F21C681CC00B79F02 /* UIColor.swift in Sources */,
 				C862581121C120D80091DD3A /* SessionRequest.swift in Sources */,
