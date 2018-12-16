@@ -103,4 +103,12 @@ extension ExploreInteractor: ExploreInteractorDelegate {
         }
     }
     
+    func getDateRange() -> (outbounddate: Date , inbounddate: Date) {
+        return (Date.today().next(.monday), Date.today().next(.tuesday))
+    }
+    
+    func getStations() -> (originStation: String, destinationStation: String) {
+        return ("Edinburgh", "London")
+    }
+    
 }

@@ -10,6 +10,7 @@ import Foundation
 
 // View / Presenter
 protocol ExploreViewInjection : class {
+    func loadTitle(_ title: String, subtitle: String)
     func showProgress(_ show: Bool, status: String)
     func showProgress(_ show: Bool)
     func loadFlights(_ viewModels: [FlightViewModel])
@@ -29,4 +30,6 @@ protocol ExploreInteractorDelegate : class {
     func isSessionCreated() -> Bool
     func createSession(completion: @escaping ExploreCreateSessionCompletionBlock)
     func getFlights(completion: @escaping ExploreGetFlightsCompletionBlock)
+    func getDateRange() -> (outbounddate: Date , inbounddate: Date)
+    func getStations() -> (originStation: String, destinationStation: String)
 }

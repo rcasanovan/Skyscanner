@@ -36,6 +36,12 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
+    public func getStringMMMddEEEFormat() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd., EEE"
+        return dateFormatter.string(from: self)
+    }
+    
     public func getStringHHmmFormat() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"

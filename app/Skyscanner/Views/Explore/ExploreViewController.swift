@@ -12,6 +12,7 @@ class ExploreViewController: BaseViewController {
     
     public var presenter: ExplorePresenterDelegate?
     
+    private let customTitleView: CustomTitleView = CustomTitleView()
     private let flightsContainerView: UIView = UIView()
     private var flightsTableView: UITableView?
     private var dataSource: FlightsDatasource?
@@ -72,11 +73,8 @@ extension ExploreViewController {
     }
     
     private func configureNavigationBar() {
-        let customTitleView = CustomTitleView()
         customTitleView.titleColor = .black
         customTitleView.subtitleColor = .lightGray
-        customTitleView.setTitle("Edinburgh to London")
-        customTitleView.setSubtitle("Mar 01., Wed - Mar 05., Sun")
         navigationItem.titleView = customTitleView
     }
     
@@ -128,6 +126,11 @@ extension ExploreViewController: UITableViewDelegate {
 }
 
 extension ExploreViewController: ExploreViewInjection {
+    
+    func loadTitle(_ title: String, subtitle: String) {
+        customTitleView.setTitle(title)
+        customTitleView.setSubtitle(subtitle)
+    }
     
     func showProgress(_ show: Bool, status: String) {
         showLoader(show, status: status)

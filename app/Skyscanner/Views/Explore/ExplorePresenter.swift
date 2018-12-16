@@ -28,6 +28,14 @@ class ExplorePresenter {
 // MARK: - Private section
 extension ExplorePresenter {
     
+    private func configureTitle() {
+        let stations = interactor.getStations()
+        let title = "\(stations.originStation) to \(stations.destinationStation)"
+        let dateRange = interactor.getDateRange()
+        let subtitle = "\(dateRange.outbounddate.getStringMMMddEEEFormat()) - \(dateRange.inbounddate.getStringMMMddEEEFormat())"
+        view?.loadTitle(title, subtitle: subtitle)
+    }
+    
     private func getFlightsInformation() {
         if !interactor.isSessionCreated() {
             createSession()
@@ -90,6 +98,7 @@ extension ExplorePresenter {
 extension ExplorePresenter: ExplorePresenterDelegate {
     
     func viewDidLoad() {
+        configureTitle()
         showProgress = true
         getFlightsInformation()
     }
