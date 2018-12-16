@@ -20,6 +20,7 @@ protocol ExploreViewInjection : class {
 protocol ExplorePresenterDelegate : class {
     func viewDidLoad()
     func loadNextPage()
+    func refreshResults()
 }
 
 // Presenter / Interactor
@@ -27,6 +28,7 @@ typealias ExploreGetFlightsCompletionBlock = (_ viewModel: [FlightViewModel]?, _
 typealias ExploreCreateSessionCompletionBlock = (_ success: Bool, _ error: ResultError?) -> Void
 
 protocol ExploreInteractorDelegate : class {
+    func clear()
     func isSessionCreated() -> Bool
     func createSession(completion: @escaping ExploreCreateSessionCompletionBlock)
     func getFlights(completion: @escaping ExploreGetFlightsCompletionBlock)

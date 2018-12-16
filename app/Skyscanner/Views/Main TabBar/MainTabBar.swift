@@ -45,6 +45,8 @@ extension MainTabBar {
         viewControllers = [searchNagivationViewController, exploreNagivationViewController, profileNagivationViewController]
         
         tabBarConfigured = true
+        
+        selectedIndex = 1
     }
     
 }

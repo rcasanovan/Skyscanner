@@ -16,6 +16,7 @@ class ExploreViewController: BaseViewController {
     private let flightsContainerView: UIView = UIView()
     private var flightsTableView: UITableView?
     private var dataSource: FlightsDatasource?
+    private var refreshControl: UIRefreshControl = UIRefreshControl()
     private var totalFlights: Int = 0
     private var isLoadingNextPage: Bool = false
     
@@ -50,6 +51,10 @@ extension ExploreViewController {
         flightsTableView?.backgroundColor = .lightGray()
         flightsTableView?.showsVerticalScrollIndicator = false
         flightsTableView?.delegate = self
+        
+        refreshControl.addTarget(self, action: #selector(userDidPullToRefresh), for: .valueChanged)
+        refreshControl.tintColor = .black()
+        flightsTableView?.addSubview(refreshControl)
         
         registerCells()
         setupDataSource()
@@ -106,6 +111,15 @@ extension ExploreViewController {
     
 }
 
+// MARK: - User actions
+extension ExploreViewController {
+    
+    @objc private func userDidPullToRefresh() {
+        presenter?.refreshResults()
+    }
+    
+}
+
 // MARK: - UITableViewDelegate
 extension ExploreViewController: UITableViewDelegate {
     
@@ -141,6 +155,7 @@ extension ExploreViewController: ExploreViewInjection {
     }
     
     func loadFlights(_ viewModels: [FlightViewModel]) {
+        refreshControl.endRefreshing()
         isLoadingNextPage = false
         totalFlights = viewModels.count
         dataSource?.flights = viewModels

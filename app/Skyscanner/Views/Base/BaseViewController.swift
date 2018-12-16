@@ -48,8 +48,9 @@ extension BaseViewController {
         titleLabel.font = UIFont.interUIMediumWithSize(size: 16.0)
         titleLabel.textColor = .black()
         titleLabel.textAlignment = .center
-        titleLabel.text = "Under construction"
         titleLabel.isHidden = true
+        titleLabel.numberOfLines = 0
+        titleLabel.text = "This view is under construction and is out of the test purpose"
     }
     
 }
@@ -72,7 +73,7 @@ extension BaseViewController {
         view.addSubview(titleLabel)
         
         view.addConstraintsWithFormat("H:|-\(Layout.leading)-[v0]-\(Layout.trailing)-|", views: titleLabel)
-        view.addConstraintsWithFormat("V:[v0(\(Layout.TitleLabel.height))]", views: titleLabel)
+        view.addConstraintsWithFormat("V:[v0(>=0.0)]", views: titleLabel)
         let centerConstraint = NSLayoutConstraint(item: titleLabel, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1.0, constant: 1.0)
         view.addConstraint(centerConstraint)
     }

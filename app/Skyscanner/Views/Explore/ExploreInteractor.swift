@@ -49,6 +49,12 @@ extension ExploreInteractor {
 // MARK: - ExploreInteractorDelegate
 extension ExploreInteractor: ExploreInteractorDelegate {
     
+    func clear() {
+        pageIndex = 0
+        allFlightsSync = false
+        flightsViewModel = []
+    }
+    
     func isSessionCreated() -> Bool {
         //__ TODO
         return false

@@ -108,4 +108,11 @@ extension ExplorePresenter: ExplorePresenterDelegate {
         getFlights()
     }
     
+    func refreshResults() {
+        interactor.clear()
+        view?.loadFlights([FlightViewModel]())
+        showProgress = true
+        getFlightsInformation()
+    }
+    
 }
