@@ -7,6 +7,8 @@
 - SwiftyPlistManager (1.0.2): Lightweight plist data management framework for iOS 10.3+
 - Reachability file: This is the official Apple's Reachability file to validate the device connection
 
+IMPORTANT NOTE: I needed to remove the libraries because the zip file size is 6.1 MB. You'll need to install the pods (pod install) before run the project.
+
 ---
 
 # General:
