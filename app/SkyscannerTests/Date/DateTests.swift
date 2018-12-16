@@ -26,7 +26,8 @@ class DateTests: XCTestCase {
     }
     
     func testNextTuesdayFromToday() {
-        let nextTuesdayFromToday = Date.today().next(.tuesday).getStringyyyyMMddFormat()
+        let nextMondayFromToday = Date.today().next(.monday)
+        let nextTuesdayFromToday = nextMondayFromToday.add(days: 1).getStringyyyyMMddFormat()
         let today = Date.today().getStringyyyyMMddFormat()
         XCTAssert(nextTuesdayFromToday != today, "Error getting the next Tuesday")
     }

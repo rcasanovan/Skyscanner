@@ -62,7 +62,7 @@ extension ExploreInteractor: ExploreInteractorDelegate {
     
     func createSession(completion: @escaping ExploreCreateSessionCompletionBlock) {
         let nextMondayFromToday = Date.today().next(.monday).getStringyyyyMMddFormat()
-        let nextTuesdayFromToday = Date.today().next(.tuesday).getStringyyyyMMddFormat()
+        let nextTuesdayFromToday = Date.today().next(.monday).add(days: 1).getStringyyyyMMddFormat()
         let body = CreateSessionParameterData(cabinclass: "Economy", country: "UK", currency: "GBP", locale: "en-GB", locationSchema: "sky", originplace: "EDI-sky", destinationplace: "LOND-sky", outbounddate: nextMondayFromToday, inbounddate: nextTuesdayFromToday, adults: 1, children: 0, infants: 0, apikey: "ss630745725358065467897349852985")
         
         createSessionWith(body: body) { [weak self] (response) in

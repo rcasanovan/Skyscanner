@@ -48,6 +48,19 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
+    public func add(days: Int = 0, months: Int = 0, years: Int = 0) -> Date {
+        var dateComponent = DateComponents()
+        dateComponent.month = months
+        dateComponent.day = days
+        dateComponent.year = years
+        
+        guard let nextDate = Calendar.current.date(byAdding: dateComponent, to: self) else {
+            return self
+        }
+        
+        return nextDate
+    }
+    
     public static func getISODateWithString(_ stringDate: String) -> Date? {
         let isoFormatter = DateFormatter()
         isoFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
