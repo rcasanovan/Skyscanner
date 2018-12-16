@@ -53,8 +53,7 @@ struct FlightViewModel {
         }
         
         for eachItinerary in pollResponse.Itineraries {
-            
-            if let outboundInformation = outboundInformationWith(eachItinerary, allLegs: allLegs, allCarriers: allCarriers, allPlaces: allPlaces), let inboundInformation = inboundInformationWith(eachItinerary, allLegs: allLegs, allCarriers: allCarriers, allPlaces: allPlaces) {
+            if let outboundInformation = boundInformationWith(outbound: true, itinerary: eachItinerary, allLegs: allLegs, allCarriers: allCarriers, allPlaces: allPlaces), let inboundInformation = boundInformationWith(outbound: false, itinerary: eachItinerary, allLegs: allLegs, allCarriers: allCarriers, allPlaces: allPlaces) {
                 for eachPrice in eachItinerary.PricingOptions {
                     let rating = getRating()
                     let information = getInformation()
@@ -73,45 +72,14 @@ struct FlightViewModel {
 
 extension FlightViewModel {
     
-    private static func outboundInformationWith(_ itinerary: ItineraryResponse, allLegs: [LegResponse], allCarriers: [CarrierResponse], allPlaces: [PlaceResponse]) -> FlightInformationViewModel? {
-        let leg = allLegs.filter {$0.Id == itinerary.OutboundLegId}.first
-        
-        guard let currentLeg = leg, let currentCarrierId = currentLeg.Carriers.first else {
-            return nil
+    private static func boundInformationWith(outbound: Bool, itinerary: ItineraryResponse, allLegs: [LegResponse], allCarriers: [CarrierResponse], allPlaces: [PlaceResponse]) -> FlightInformationViewModel? {
+        var leg: LegResponse?
+            
+        if outbound {
+            leg = allLegs.filter {$0.Id == itinerary.OutboundLegId}.first
+        } else {
+            leg = allLegs.filter {$0.Id == itinerary.InboundLegId}.first
         }
-        
-        let carrier = allCarriers.filter {$0.Id == currentCarrierId}.first
-        guard let currentCarrier = carrier else {
-            return nil
-        }
-        
-        guard let departureHHmmTime = Date.getISODateWithString(currentLeg.Departure)?.getStringHHmmFormat(), let arrivalHHmmTime = Date.getISODateWithString(currentLeg.Arrival)?.getStringHHmmFormat() else {
-            return nil
-        }
-        
-        let originStation = allPlaces.filter {$0.Id == currentLeg.OriginStation}.first
-        let destinationStation = allPlaces.filter {$0.Id == currentLeg.DestinationStation}.first
-        guard let currentOriginStation = originStation, let currentDestinationStation = destinationStation else {
-            return nil
-        }
-        
-        let airlineUrl = URL(string: "https://logos.skyscnr.com/images/airlines/favicon/\(currentCarrier.Code).png")
-        
-        let totalStops = currentLeg.Stops.count
-        let connection = totalStops > 0 ? "\(totalStops) scale" : "Direct"
-        
-        let information = "\(currentOriginStation.Code)-\(currentDestinationStation.Code), \(currentCarrier.Name)"
-        
-        let time = "\(departureHHmmTime) - \(arrivalHHmmTime)"
-        
-        let timeDuration = Date.minutesToHoursMinutes(minutes: currentLeg.Duration)
-        let duration = "\(timeDuration.hours)h \(timeDuration.leftMinutes)m"
-        
-        return FlightInformationViewModel(airlineUrl: airlineUrl, time: time, information: information, connection: connection, duration: duration)
-    }
-    
-    private static func inboundInformationWith(_ itinerary: ItineraryResponse, allLegs: [LegResponse], allCarriers: [CarrierResponse], allPlaces: [PlaceResponse]) -> FlightInformationViewModel? {
-        let leg = allLegs.filter {$0.Id == itinerary.InboundLegId}.first
         
         guard let currentLeg = leg, let currentCarrierId = currentLeg.Carriers.first else {
             return nil
