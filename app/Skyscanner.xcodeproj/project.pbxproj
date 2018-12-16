@@ -48,6 +48,15 @@
 		C862583F21C195800091DD3A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C862583E21C195800091DD3A /* ProfileViewController.swift */; };
 		C862584121C195BA0091DD3A /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C862584021C195BA0091DD3A /* ProfileRouter.swift */; };
 		C8CE160F21C681CC00B79F02 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CE160E21C681CC00B79F02 /* UIColor.swift */; };
+		C8CE161921C684FC00B79F02 /* InterUI-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8CE161121C684FC00B79F02 /* InterUI-Bold.ttf */; };
+		C8CE161A21C684FC00B79F02 /* InterUI-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8CE161221C684FC00B79F02 /* InterUI-Black.ttf */; };
+		C8CE161B21C684FC00B79F02 /* InterUI-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8CE161321C684FC00B79F02 /* InterUI-MediumItalic.ttf */; };
+		C8CE161C21C684FC00B79F02 /* InterUI-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8CE161421C684FC00B79F02 /* InterUI-BlackItalic.ttf */; };
+		C8CE161D21C684FC00B79F02 /* InterUI-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8CE161521C684FC00B79F02 /* InterUI-BoldItalic.ttf */; };
+		C8CE161E21C684FC00B79F02 /* InterUI-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8CE161621C684FC00B79F02 /* InterUI-Medium.ttf */; };
+		C8CE161F21C684FC00B79F02 /* InterUI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8CE161721C684FC00B79F02 /* InterUI-Regular.ttf */; };
+		C8CE162021C684FC00B79F02 /* InterUI-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8CE161821C684FC00B79F02 /* InterUI-Italic.ttf */; };
+		C8CE162221C6853000B79F02 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CE162121C6853000B79F02 /* UIFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +120,15 @@
 		C862583E21C195800091DD3A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C862584021C195BA0091DD3A /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 		C8CE160E21C681CC00B79F02 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		C8CE161121C684FC00B79F02 /* InterUI-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterUI-Bold.ttf"; sourceTree = "<group>"; };
+		C8CE161221C684FC00B79F02 /* InterUI-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterUI-Black.ttf"; sourceTree = "<group>"; };
+		C8CE161321C684FC00B79F02 /* InterUI-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterUI-MediumItalic.ttf"; sourceTree = "<group>"; };
+		C8CE161421C684FC00B79F02 /* InterUI-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterUI-BlackItalic.ttf"; sourceTree = "<group>"; };
+		C8CE161521C684FC00B79F02 /* InterUI-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterUI-BoldItalic.ttf"; sourceTree = "<group>"; };
+		C8CE161621C684FC00B79F02 /* InterUI-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterUI-Medium.ttf"; sourceTree = "<group>"; };
+		C8CE161721C684FC00B79F02 /* InterUI-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterUI-Regular.ttf"; sourceTree = "<group>"; };
+		C8CE161821C684FC00B79F02 /* InterUI-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterUI-Italic.ttf"; sourceTree = "<group>"; };
+		C8CE162121C6853000B79F02 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +348,7 @@
 		C862582121C178490091DD3A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C8CE161021C684FC00B79F02 /* Fonts */,
 				C862582221C178530091DD3A /* Simulated Response */,
 			);
 			path = Resources;
@@ -441,8 +460,24 @@
 		C8CE160D21C681A000B79F02 /* UIFont */ = {
 			isa = PBXGroup;
 			children = (
+				C8CE162121C6853000B79F02 /* UIFont.swift */,
 			);
 			path = UIFont;
+			sourceTree = "<group>";
+		};
+		C8CE161021C684FC00B79F02 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C8CE161121C684FC00B79F02 /* InterUI-Bold.ttf */,
+				C8CE161221C684FC00B79F02 /* InterUI-Black.ttf */,
+				C8CE161321C684FC00B79F02 /* InterUI-MediumItalic.ttf */,
+				C8CE161421C684FC00B79F02 /* InterUI-BlackItalic.ttf */,
+				C8CE161521C684FC00B79F02 /* InterUI-BoldItalic.ttf */,
+				C8CE161621C684FC00B79F02 /* InterUI-Medium.ttf */,
+				C8CE161721C684FC00B79F02 /* InterUI-Regular.ttf */,
+				C8CE161821C684FC00B79F02 /* InterUI-Italic.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -531,8 +566,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C86257DD21C10D020091DD3A /* LaunchScreen.storyboard in Resources */,
+				C8CE161E21C684FC00B79F02 /* InterUI-Medium.ttf in Resources */,
 				C862582421C178BB0091DD3A /* SimulatedResponse.json in Resources */,
+				C8CE161921C684FC00B79F02 /* InterUI-Bold.ttf in Resources */,
+				C8CE162021C684FC00B79F02 /* InterUI-Italic.ttf in Resources */,
 				C86257DA21C10D020091DD3A /* Assets.xcassets in Resources */,
+				C8CE161C21C684FC00B79F02 /* InterUI-BlackItalic.ttf in Resources */,
+				C8CE161B21C684FC00B79F02 /* InterUI-MediumItalic.ttf in Resources */,
+				C8CE161D21C684FC00B79F02 /* InterUI-BoldItalic.ttf in Resources */,
+				C8CE161F21C684FC00B79F02 /* InterUI-Regular.ttf in Resources */,
+				C8CE161A21C684FC00B79F02 /* InterUI-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +691,7 @@
 				C862583421C18ADA0091DD3A /* CustomTitleView.swift in Sources */,
 				C862582B21C185CE0091DD3A /* MainTabBar.swift in Sources */,
 				C83003A821C273A700CCCAC8 /* FlightsDataSource.swift in Sources */,
+				C8CE162221C6853000B79F02 /* UIFont.swift in Sources */,
 				C862580421C10DED0091DD3A /* Result.swift in Sources */,
 				C862580221C10DED0091DD3A /* HTTPCode.swift in Sources */,
 				C862580821C10DED0091DD3A /* EndPoint.swift in Sources */,

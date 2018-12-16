@@ -64,7 +64,7 @@ extension FlightView {
         airlineImageView.contentMode = .scaleAspectFit
         airlineImageView.frame = CGRect(x: 0.0, y: 0.0, width: Layout.AirlineImageView.width, height: Layout.AirlineImageView.height)
         
-        timeLabel.font = UIFont.boldSystemFont(ofSize: 18.0)
+        timeLabel.font = UIFont.interUIMediumWithSize(size: 18.0) //boldSystemFont(ofSize: 18.0)
         timeLabel.textColor = .black()
         
         informationLabel.font = UIFont.systemFont(ofSize: 14.0)
