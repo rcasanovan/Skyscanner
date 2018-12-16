@@ -118,7 +118,7 @@ extension ExploreInteractor: ExploreInteractorDelegate {
     }
     
     func getDateRange() -> (outbounddate: Date , inbounddate: Date) {
-        return (Date.today().next(.monday), Date.today().next(.tuesday))
+        return (Date.today().next(.monday), Date.today().next(.monday).add(days: 1))
     }
     
     func getStations() -> (originStation: String, destinationStation: String) {
