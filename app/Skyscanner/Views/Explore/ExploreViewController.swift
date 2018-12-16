@@ -13,6 +13,7 @@ class ExploreViewController: BaseViewController {
     public var presenter: ExplorePresenterDelegate?
     
     private let customTitleView: CustomTitleView = CustomTitleView()
+    private let headerView: HeaderView = HeaderView()
     private let flightsContainerView: UIView = UIView()
     private var flightsTableView: UITableView?
     private var dataSource: FlightsDatasource?
@@ -97,10 +98,14 @@ extension ExploreViewController {
     }
     
     private func addSubviews() {
+        view.addSubview(headerView)
         view.addSubview(flightsContainerView)
         
+        view.addConstraintsWithFormat("H:|[v0]|", views: headerView)
+        view.addConstraintsWithFormat("V:|[v0(\(headerView.height))]", views: headerView)
+        
         view.addConstraintsWithFormat("H:|[v0]|", views: flightsContainerView)
-        view.addConstraintsWithFormat("V:|[v0]|", views: flightsContainerView)
+        view.addConstraintsWithFormat("V:[v0][v1]|", views: headerView, flightsContainerView)
         
         if let flightsTableView = flightsTableView {
             flightsContainerView.addSubview(flightsTableView)
@@ -156,6 +161,7 @@ extension ExploreViewController: ExploreViewInjection {
     
     func loadFlights(_ viewModels: [FlightViewModel]) {
         refreshControl.endRefreshing()
+        headerView.bindWithTitle("\(viewModels.count) results shown")
         isLoadingNextPage = false
         totalFlights = viewModels.count
         dataSource?.flights = viewModels

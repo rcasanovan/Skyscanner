@@ -19,7 +19,7 @@ class ExploreInteractor {
     
     init() {
         pageIndex = 0
-        pageSize = 1500
+        pageSize = 1000
         flightsViewModel = []
     }
     

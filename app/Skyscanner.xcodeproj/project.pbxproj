@@ -57,6 +57,7 @@
 		C8CE161F21C684FC00B79F02 /* InterUI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8CE161721C684FC00B79F02 /* InterUI-Regular.ttf */; };
 		C8CE162021C684FC00B79F02 /* InterUI-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8CE161821C684FC00B79F02 /* InterUI-Italic.ttf */; };
 		C8CE162221C6853000B79F02 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CE162121C6853000B79F02 /* UIFont.swift */; };
+		C8CE162421C68BC800B79F02 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CE162321C68BC800B79F02 /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		C8CE161721C684FC00B79F02 /* InterUI-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterUI-Regular.ttf"; sourceTree = "<group>"; };
 		C8CE161821C684FC00B79F02 /* InterUI-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterUI-Italic.ttf"; sourceTree = "<group>"; };
 		C8CE162121C6853000B79F02 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		C8CE162321C68BC800B79F02 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			children = (
 				C83003A221C26F7200CCCAC8 /* FlightView.swift */,
 				C83003B221C288BD00CCCAC8 /* FlightFooterView.swift */,
+				C8CE162321C68BC800B79F02 /* HeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -707,6 +710,7 @@
 				C83003B321C288BD00CCCAC8 /* FlightFooterView.swift in Sources */,
 				C83003A321C26F7200CCCAC8 /* FlightView.swift in Sources */,
 				C83003A621C2726100CCCAC8 /* FlightTableViewCell.swift in Sources */,
+				C8CE162421C68BC800B79F02 /* HeaderView.swift in Sources */,
 				C862582821C1857C0091DD3A /* BaseViewController.swift in Sources */,
 				C83003AD21C27AD700CCCAC8 /* ExploreProtocols.swift in Sources */,
 				C862583B21C194D50091DD3A /* SearchViewController.swift in Sources */,
