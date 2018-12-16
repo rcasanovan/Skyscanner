@@ -60,6 +60,12 @@
 		C8CE162421C68BC800B79F02 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CE162321C68BC800B79F02 /* HeaderView.swift */; };
 		C8CE162821C6993800B79F02 /* Session.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8CE162721C6993800B79F02 /* Session.plist */; };
 		C8CE162A21C6994700B79F02 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CE162921C6994700B79F02 /* SessionManager.swift */; };
+		C8CE162E21C6D17600B79F02 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C8CE162D21C6D17600B79F02 /* Reachability.m */; };
+		C8CE163021C6D19500B79F02 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CE162F21C6D19500B79F02 /* ReachabilityManager.swift */; };
+		C8CE163521C6D8FB00B79F02 /* GeneralMessageProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CE163221C6D8FB00B79F02 /* GeneralMessageProtocols.swift */; };
+		C8CE163621C6D8FB00B79F02 /* GeneralMessagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CE163321C6D8FB00B79F02 /* GeneralMessagePresenter.swift */; };
+		C8CE163721C6D8FB00B79F02 /* GeneralMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CE163421C6D8FB00B79F02 /* GeneralMessageViewController.swift */; };
+		C8CE163A21C6D97000B79F02 /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CE163921C6D97000B79F02 /* UIEdgeInsets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +141,13 @@
 		C8CE162321C68BC800B79F02 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		C8CE162721C6993800B79F02 /* Session.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Session.plist; sourceTree = "<group>"; };
 		C8CE162921C6994700B79F02 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		C8CE162C21C6D17600B79F02 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		C8CE162D21C6D17600B79F02 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		C8CE162F21C6D19500B79F02 /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
+		C8CE163221C6D8FB00B79F02 /* GeneralMessageProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralMessageProtocols.swift; sourceTree = "<group>"; };
+		C8CE163321C6D8FB00B79F02 /* GeneralMessagePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralMessagePresenter.swift; sourceTree = "<group>"; };
+		C8CE163421C6D8FB00B79F02 /* GeneralMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralMessageViewController.swift; sourceTree = "<group>"; };
+		C8CE163921C6D97000B79F02 /* UIEdgeInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,10 +239,10 @@
 		C86257D121C10D010091DD3A /* Skyscanner */ = {
 			isa = PBXGroup;
 			children = (
-				C8CE162521C6991E00B79F02 /* Managers */,
 				C846805321C2958D0003E2E1 /* Skyscanner-Bridging-Header.h */,
 				C86257D221C10D010091DD3A /* AppDelegate.swift */,
 				C862582521C185570091DD3A /* Views */,
+				C8CE162521C6991E00B79F02 /* Managers */,
 				C862581A21C16F560091DD3A /* Extensions */,
 				C86257F221C10DED0091DD3A /* Network */,
 				C862582121C178490091DD3A /* Resources */,
@@ -329,6 +342,7 @@
 		C862581A21C16F560091DD3A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C8CE163821C6D96500B79F02 /* UIEdgeInsets */,
 				C8CE160D21C681A000B79F02 /* UIFont */,
 				C8CE160C21C6819900B79F02 /* UIColor */,
 				C862583521C1911C0091DD3A /* UIView */,
@@ -379,6 +393,7 @@
 				C862583821C194B20091DD3A /* Search */,
 				C862582C21C189B10091DD3A /* Explore */,
 				C862583921C194BF0091DD3A /* Profile */,
+				C8CE163121C6D8FB00B79F02 /* General Message */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -491,6 +506,7 @@
 		C8CE162521C6991E00B79F02 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				C8CE162B21C6D15400B79F02 /* Reachability Manager */,
 				C8CE162621C6992300B79F02 /* Session Manager */,
 			);
 			path = Managers;
@@ -503,6 +519,34 @@
 				C8CE162921C6994700B79F02 /* SessionManager.swift */,
 			);
 			path = "Session Manager";
+			sourceTree = "<group>";
+		};
+		C8CE162B21C6D15400B79F02 /* Reachability Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C8CE162C21C6D17600B79F02 /* Reachability.h */,
+				C8CE162D21C6D17600B79F02 /* Reachability.m */,
+				C8CE162F21C6D19500B79F02 /* ReachabilityManager.swift */,
+			);
+			path = "Reachability Manager";
+			sourceTree = "<group>";
+		};
+		C8CE163121C6D8FB00B79F02 /* General Message */ = {
+			isa = PBXGroup;
+			children = (
+				C8CE163221C6D8FB00B79F02 /* GeneralMessageProtocols.swift */,
+				C8CE163321C6D8FB00B79F02 /* GeneralMessagePresenter.swift */,
+				C8CE163421C6D8FB00B79F02 /* GeneralMessageViewController.swift */,
+			);
+			path = "General Message";
+			sourceTree = "<group>";
+		};
+		C8CE163821C6D96500B79F02 /* UIEdgeInsets */ = {
+			isa = PBXGroup;
+			children = (
+				C8CE163921C6D97000B79F02 /* UIEdgeInsets.swift */,
+			);
+			path = UIEdgeInsets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -726,10 +770,15 @@
 				C862580221C10DED0091DD3A /* HTTPCode.swift in Sources */,
 				C862580821C10DED0091DD3A /* EndPoint.swift in Sources */,
 				C862581D21C16F750091DD3A /* Date.swift in Sources */,
+				C8CE163521C6D8FB00B79F02 /* GeneralMessageProtocols.swift in Sources */,
 				C83003AB21C2740F00CCCAC8 /* FlightViewModel.swift in Sources */,
 				C862583F21C195800091DD3A /* ProfileViewController.swift in Sources */,
+				C8CE163621C6D8FB00B79F02 /* GeneralMessagePresenter.swift in Sources */,
+				C8CE162E21C6D17600B79F02 /* Reachability.m in Sources */,
 				C862580121C10DED0091DD3A /* RequestManager.swift in Sources */,
 				C862583021C18A570091DD3A /* ExploreRouter.swift in Sources */,
+				C8CE163021C6D19500B79F02 /* ReachabilityManager.swift in Sources */,
+				C8CE163A21C6D97000B79F02 /* UIEdgeInsets.swift in Sources */,
 				C862581621C156B50091DD3A /* PollRequest.swift in Sources */,
 				C83003B121C27C4100CCCAC8 /* ExploreInteractor.swift in Sources */,
 				C862580721C10DED0091DD3A /* RequestErrors.swift in Sources */,
@@ -741,6 +790,7 @@
 				C862582821C1857C0091DD3A /* BaseViewController.swift in Sources */,
 				C83003AD21C27AD700CCCAC8 /* ExploreProtocols.swift in Sources */,
 				C862583B21C194D50091DD3A /* SearchViewController.swift in Sources */,
+				C8CE163721C6D8FB00B79F02 /* GeneralMessageViewController.swift in Sources */,
 				C862583D21C195070091DD3A /* SearchRouter.swift in Sources */,
 				C8CE162A21C6994700B79F02 /* SessionManager.swift in Sources */,
 				C862580D21C11F100091DD3A /* CreateSessionParameterData.swift in Sources */,

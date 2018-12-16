@@ -9,6 +9,9 @@
 #ifndef Skyscanner_Bridging_Header_h
 #define Skyscanner_Bridging_Header_h
 
+//__ Reachability
+#import "Reachability.h"
+
 //__ Haneke
 #import <Haneke/Haneke.h>
 
