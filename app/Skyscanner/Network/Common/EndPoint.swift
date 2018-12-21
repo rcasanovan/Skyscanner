@@ -18,7 +18,7 @@ protocol EndpointProtocol: RawRepresentable where RawValue == String {
 private struct Url {
     
     static let baseUrl: String = "http://partners.api.skyscanner.net/apiservices"
-    static let apiKey: String = "ss630745725358065467897349852985"
+    static let apiKey: String = "ADD YOUR API KEY HERE"
     
     struct Fields {
         static let apikey: String = "apikey"
